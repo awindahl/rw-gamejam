@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Node2D
 
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
@@ -7,22 +7,29 @@ var _type = ""
 var _speed = 0
 var _health = 0
 var _xp = 0
+var _spriteSheet = ""
 
 func init(spritesheet, type, health, speed, xp):
 	_health = health
 	_speed = speed
 	_type = type
 	_xp = xp
-	var enemy_texture = load("res://images/" + spritesheet + ".png")
-	sprite.texture = enemy_texture
+	_spriteSheet = spritesheet
 	return self
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var enemy_texture = load("res://images/" + _spriteSheet + ".png")
+	sprite.texture = enemy_texture
 
-
-#func _process(delta):
+func _process(delta):
+	pass
 #	follow player
-# if health <= 0:
-#	animPlayer.play("death")
+
+func damage(ammount):
+	_health = _health-ammount
+	if (_health >= 0):
+		_health = 0
+		die()
+
+func die():
+	animPlayer.play("death")

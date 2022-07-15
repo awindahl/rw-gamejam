@@ -78,10 +78,10 @@ func _process(delta):
 # Called on attacks
 func attack():
 	
-	for body in aoe_hitbox.get_overlapping_bodies():
+	for body in aoe_hitbox.get_overlapping_areas():
 		if body.is_in_group("Enemies"):
 			#TODO random damage from 0 to max damage
-			body.damage(max_damage)
+			body.get_parent().damage(max_damage)
 			print("attack!")
 	
 	pass
