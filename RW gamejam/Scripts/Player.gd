@@ -6,6 +6,7 @@ onready var aoe_hitbox_size = $Hitbox/CollisionShape2D
 onready var attack_particles = $Hitbox/CPUParticles2D
 onready var weapons = $Weapons
 
+
 #input
 var up
 var down
