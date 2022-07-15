@@ -3,7 +3,8 @@ extends KinematicBody2D
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 onready var player = $"/root/TestBench/Player"
-
+onready var coll = $Area2D/CollisionShape2D
+onready var pickup = preload("res://Scenes/Pickup.tscn");
 var _type = ""
 var _speed = 0
 var _health = 0
@@ -38,11 +39,14 @@ func damage(ammount):
 		die()
 
 func die():
+	coll.disabled = true
 	animPlayer.play("death")
-
-
+	var new_pickup = pickup.instance().init(_xp)
+	new_pickup.position = position
+	get_parent().add_child(new_pickup)
+	
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and _health > 0:
 		if not body.is_invincible:
 			#TODO proper damage numbers
 			body.damage(10)
