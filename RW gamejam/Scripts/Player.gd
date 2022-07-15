@@ -5,7 +5,14 @@ onready var aoe_hitbox = $Hitbox
 onready var aoe_hitbox_size = $Hitbox/CollisionShape2D
 onready var attack_particles = $Hitbox/CPUParticles2D
 onready var weapons = $Weapons
+onready var UI = $CanvasLayer/UI
+onready var XP_bar = $CanvasLayer/UI/XPbar
+onready var HP_bar = $HPbar
 
+#xp, hp, etc
+var xp = 0
+var max_hp = 100
+var current_hp = 100
 
 #input
 var up
@@ -27,6 +34,7 @@ var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	current_hp = max_hp
 	_update_ring()
 
 # Called when pickup area size is changed.
@@ -36,6 +44,8 @@ func _update_ring():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	UI_update()
+	
 	#checks every frame which keys are down
 	up = Input.is_action_pressed("ui_up")
 	down = Input.is_action_pressed("ui_down")
@@ -75,6 +85,10 @@ func _process(delta):
 
 	move_and_slide(velocity * move_speed)
 
+func UI_update():
+	XP_bar.value = xp
+	HP_bar.value = current_hp
+	HP_bar.max_value = max_hp
 
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Pickups"):
