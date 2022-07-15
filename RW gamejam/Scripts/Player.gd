@@ -70,20 +70,16 @@ func _process(delta):
 	#smoothly accelerate
 	velocity.x = lerp(velocity.x, direction.x, acceleration)
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
-	
-	
+
 	move_and_slide(velocity * move_speed)
 
 
 # Called on attacks
 func attack():
-	
-	for body in aoe_hitbox.get_overlapping_areas():
+	for body in aoe_hitbox.get_overlapping_bodies():
 		if body.is_in_group("Enemies"):
 			#TODO random damage from 0 to max damage
-			body.get_parent().damage(max_damage)
-			print("attack!")
-	
+			body.damage(max_damage)
 	pass
 
 # Auto-attack

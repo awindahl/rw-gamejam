@@ -10,8 +10,8 @@ var enemy = load("res://Enemy.tscn");
 func _ready():
 	
 	#test-spawn specific enemy
-	var childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 5, 10)
-	
+	var childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 25, 10)
+	childEnemy.set_position(Vector2(150,150))
 	#instance specific enemy
 	add_child(childEnemy)
 	pass # Replace with function body.

@@ -1,7 +1,8 @@
-extends Node2D
+extends KinematicBody2D
 
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
+onready var player = $"/root/TestBench/Player"
 
 var _type = ""
 var _speed = 0
@@ -22,8 +23,8 @@ func _ready():
 	sprite.texture = enemy_texture
 
 func _process(delta):
-	pass
-#	follow player
+	var position_difference = player.position - position
+	move_and_slide(position_difference.normalized() * _speed)
 
 func damage(ammount):
 	_health = _health-ammount
