@@ -22,7 +22,6 @@ func _particles():
 func _on_Timer_timeout():
 	anim_player.play("Whip")
 
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemies"):
 			body.damage(damage)
