@@ -5,7 +5,20 @@ onready var aoe_hitbox = $Hitbox
 onready var aoe_hitbox_size = $Hitbox/CollisionShape2D
 onready var attack_particles = $Hitbox/CPUParticles2D
 onready var weapons = $Weapons
+onready var UI = $CanvasLayer/UI
+onready var XP_bar = $CanvasLayer/UI/XPbar
+onready var HP_bar = $HPbar
+onready var blood_particles = preload("res://Scenes/BloodParticles.tscn")
+onready var hit_timer = $HitTimer
+onready var invic_timer = $InvincibilityTimer
+onready var sprite = $Sprite
 
+
+#xp, hp, etc
+var xp = 0
+var max_hp = 100
+var current_hp = 100
+var is_invincible = false
 
 #input
 var up
@@ -23,10 +36,13 @@ var move_speed = 250
 var acceleration = 0.5
 var direction = Vector2()
 var velocity = Vector2()
+var is_hit = false
+var hit_dir = Vector2()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	current_hp = max_hp
 	_update_ring()
 
 # Called when pickup area size is changed.
@@ -36,6 +52,8 @@ func _update_ring():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	UI_update()
+	
 	#checks every frame which keys are down
 	up = Input.is_action_pressed("ui_up")
 	down = Input.is_action_pressed("ui_down")
@@ -72,9 +90,16 @@ func _process(delta):
 	#smoothly accelerate
 	velocity.x = lerp(velocity.x, direction.x, acceleration)
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
+	
+	if not is_hit:
+		move_and_slide(velocity * move_speed)
+	elif is_hit:
+		move_and_slide(hit_dir * 20)
 
-	move_and_slide(velocity * move_speed)
-
+func UI_update():
+	XP_bar.value = xp
+	HP_bar.value = current_hp
+	HP_bar.max_value = max_hp
 
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Pickups"):
@@ -82,3 +107,21 @@ func _on_Hitbox_area_entered(area):
 			area.has_player = true
 			area.Player = self
 
+func damage(damage):
+	var new_blood = blood_particles.instance()
+	add_child(new_blood)
+	new_blood.emitting = true
+	current_hp -= damage
+	hit_timer.start()
+	invic_timer.start()
+	is_invincible = true
+	sprite.modulate.a = 0.5
+
+
+func _on_HitTimer_timeout():
+	is_hit = false
+
+
+func _on_InvincibilityTimer_timeout():
+	is_invincible = false
+	sprite.modulate.a = 1

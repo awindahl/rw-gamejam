@@ -95,6 +95,22 @@ tracks/3/keys = {
 "method": "_particles"
 } ]
 }
+<<<<<<< HEAD
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0.0770237 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ null ],
+"method": "_on_Area2D_body_entered"
+} ]
+}
+||||||| 2f14258
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
 tracks/4/interp = 1
@@ -109,6 +125,8 @@ tracks/4/keys = {
 "method": "_on_Area2D_body_entered"
 } ]
 }
+=======
+>>>>>>> e1f0083310af5c0cae27337f3e80cf1c90f48a55
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 33, 2 )

@@ -39,3 +39,12 @@ func damage(ammount):
 
 func die():
 	animPlayer.play("death")
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Player"):
+		if not body.is_invincible:
+			#TODO proper damage numbers
+			body.damage(10)
+			body.is_hit = true
+			body.hit_dir = body.position - position

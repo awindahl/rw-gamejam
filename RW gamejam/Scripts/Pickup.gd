@@ -20,4 +20,5 @@ func _process(delta):
 
 func _on_Pickup_body_entered(body):
 	if body.is_in_group("Player"):
+		body.xp += 1
 		queue_free()
