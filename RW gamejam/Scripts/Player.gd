@@ -74,7 +74,6 @@ func _process(delta):
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
 	
 	move_and_slide(velocity * move_speed)
-	
 
 
 func _on_Hitbox_area_entered(area):
