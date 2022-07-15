@@ -49,12 +49,8 @@ func _process(delta):
 	elif not (up and down and left and right):
 		direction *= 0
 	
-	
 	velocity.x = lerp(velocity.x, direction.x, acceleration)
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
-	
-	print(velocity)
-
 	
 	move_and_slide(velocity * move_speed)
 
