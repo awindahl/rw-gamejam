@@ -24,19 +24,19 @@ texture = ExtResource( 1 )
 shape = SubResource( 2 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Hitbox"]
+visible = false
 amount = 100
+explosiveness = 1.0
 local_coords = false
+draw_order = 1
 emission_shape = 1
-emission_sphere_radius = 80.0
+emission_sphere_radius = 1.0
 direction = Vector2( 0, 0 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
-scale_amount = 4.79
-scale_amount_random = 1.0
-hue_variation = 0.01
-hue_variation_random = 1.0
+initial_velocity = 80.0
+hue_variation = -0.09
 
-[node name="AttackTimer" type="Timer" parent="."]
-autostart = true
+[node name="Weapons" type="Node2D" parent="."]
 
-[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
