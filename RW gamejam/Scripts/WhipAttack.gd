@@ -12,12 +12,6 @@ var damage = 30
 func _ready():
 	pass # Replace with function body.
 
-func attack():
-	for body in area.get_overlapping_bodies():
-		print(body)
-		if body.is_in_group("Enemies"):
-			body.damage(damage)
-
 func _particles():
 	var new_particles = particles.instance()
 	new_particles.emitting = true
@@ -27,3 +21,8 @@ func _particles():
 
 func _on_Timer_timeout():
 	anim_player.play("Whip")
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Enemies"):
+			body.damage(damage)
