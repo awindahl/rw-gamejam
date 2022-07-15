@@ -2,15 +2,21 @@ extends Node
 
 onready var enemy = preload("res://Enemy.tscn")
 onready var viewport_size = get_viewport().get_visible_rect().size
+onready var camera = $"/root/TestBench/Player"
+var time = 0
 
 func _ready():
 	randomize()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time+=delta
+	if (time > 3):
+		print(camera.position)
+		time = 0
 		var coords = get_coordinates_on_viewport(viewport_size, randi() % 360)
 		var childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 50, 10)
-		childEnemy.position = coords
+		childEnemy.position = Vector2(camera.position.x + coords.x, camera.position.y + coords.y)
 		add_child(childEnemy)
 
 func get_coordinates_on_viewport(rect, deg):
