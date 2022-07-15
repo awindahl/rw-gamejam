@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), -1148.05, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.843137, 0.632955 ), -1.85455, -1.85455, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.0883978, 0.994475, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 0.415405, 0.415405, 0.415405, 0.574586, 0.976471, 0.976471, 0.976471, 0 )
+
+[node name="BloodParticles" type="CPUParticles2D"]
+emitting = false
+amount = 128
+one_shot = true
+speed_scale = 1.94
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = false
+direction = Vector2( 0, -1 )
+spread = 76.31
+gravity = Vector2( 0, 61.135 )
+initial_velocity = 15.66
+initial_velocity_random = 1.0
+linear_accel = 11.18
+linear_accel_random = 1.0
+linear_accel_curve = SubResource( 1 )
+scale_amount = 10.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 3 )
+color = Color( 0.901961, 0.0156863, 0.0156863, 1 )
+color_ramp = SubResource( 2 )
+hue_variation_random = 1.0
