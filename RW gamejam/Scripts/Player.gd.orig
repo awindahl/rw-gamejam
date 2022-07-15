@@ -6,7 +6,6 @@ onready var aoe_hitbox_size = $Hitbox/CollisionShape2D
 onready var attack_particles = $Hitbox/CPUParticles2D
 onready var weapons = $Weapons
 
-
 #input
 var up
 var down
@@ -50,6 +49,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		weapons.scale.x = 1
 	
+	print(scale.x)
 	#movement direction handler
 	if up or down or left or right:
 		if up:
@@ -72,7 +72,24 @@ func _process(delta):
 	#smoothly accelerate
 	velocity.x = lerp(velocity.x, direction.x, acceleration)
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
+<<<<<<< HEAD
 
+	move_and_slide(velocity * move_speed)
+
+
+# Called on attacks
+func attack():
+	for body in aoe_hitbox.get_overlapping_bodies():
+		if body.is_in_group("Enemies"):
+			#TODO random damage from 0 to max damage
+			body.damage(max_damage)
+	pass
+
+# Auto-attack
+func _on_AttackTimer_timeout():
+	attack()
+=======
+	
 	move_and_slide(velocity * move_speed)
 
 
@@ -81,4 +98,4 @@ func _on_Hitbox_area_entered(area):
 		if not area.has_player:
 			area.has_player = true
 			area.Player = self
-
+>>>>>>> 28f343e39cfc8eab0c4a090e343b1aacc4fb2943
