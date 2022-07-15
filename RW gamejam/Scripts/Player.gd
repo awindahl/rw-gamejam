@@ -49,7 +49,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		weapons.scale.x = 1
 	
-	print(scale.x)
 	#movement direction handler
 	if up or down or left or right:
 		if up:
