@@ -24,11 +24,16 @@ func _ready():
 
 func _process(delta):
 	var position_difference = player.position - position
+	if (position.x > player.position.x):
+		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
 	move_and_slide(position_difference.normalized() * _speed)
 
 func damage(ammount):
 	_health = _health-ammount
-	if (_health >= 0):
+	print(ammount)
+	if (_health <= 0):
 		_health = 0
 		die()
 

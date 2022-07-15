@@ -12,10 +12,13 @@ func _ready():
 func _process(delta):
 	time+=delta
 	if (time > 3):
-		print(camera.position)
 		time = 0
 		var coords = get_coordinates_on_viewport(viewport_size, randi() % 360)
-		var childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 50, 10)
+		var childEnemy
+		if (randi() % 10 > 4):
+			childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 75, 10)
+		else:
+			childEnemy = enemy.instance().init("skele_sheet", "ground", 60, 20, 10)
 		childEnemy.position = Vector2(camera.position.x + coords.x, camera.position.y + coords.y)
 		add_child(childEnemy)
 

@@ -6,7 +6,7 @@ onready var anim_player = $AnimationPlayer
 onready var area = $Area2D
 
 var attack_speed = 1
-var damage = 30
+var damage = 31
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,4 +24,5 @@ func _on_Timer_timeout():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemies"):
-			body.damage(damage)
+		print("damaing enemy")
+		body.damage(damage)
