@@ -129,6 +129,7 @@ scale_amount = 0.42
 color = Color( 1, 0, 0, 0.333333 )
 
 [node name="Beam" type="CPUParticles2D" parent="Arcane"]
+visible = false
 position = Vector2( 0, 40 )
 amount = 32
 lifetime = 1.46
