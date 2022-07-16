@@ -142,8 +142,8 @@ anchor_right = 0.607
 anchor_bottom = 0.319
 margin_left = 1.95999
 margin_top = 1.0
-margin_right = 3.03992
-margin_bottom = 1.31999
+margin_right = 6.04004
+margin_bottom = 3.31999
 rect_pivot_offset = Vector2( 162, 62 )
 focus_neighbour_top = NodePath("../Button4")
 focus_neighbour_bottom = NodePath("../Button2")
@@ -151,21 +151,33 @@ focus_next = NodePath("../Button2")
 focus_previous = NodePath("../Button4")
 icon = ExtResource( 8 )
 
+[node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button"]
+margin_left = 248.0
+margin_right = 278.0
+margin_bottom = 30.0
+expand = true
+
 [node name="Button2" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
 anchor_top = 0.339
 anchor_right = 0.609
 anchor_bottom = 0.443
-margin_left = -0.320038
-margin_top = -0.0800171
-margin_right = -0.52002
-margin_bottom = 0.039978
+margin_left = -0.320007
+margin_top = -0.0799866
+margin_right = 3.47998
+margin_bottom = 0.0400085
 rect_pivot_offset = Vector2( 162, 62 )
 focus_neighbour_top = NodePath("../Button")
 focus_neighbour_bottom = NodePath("../Button3")
 focus_next = NodePath("../Button3")
 focus_previous = NodePath("../Button")
 icon = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button2"]
+margin_left = 249.0
+margin_right = 279.0
+margin_bottom = 30.0
+expand = true
 
 [node name="Button3" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
@@ -186,6 +198,13 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button3"]
+margin_left = 248.0
+margin_top = 1.0
+margin_right = 278.0
+margin_bottom = 31.0
+expand = true
+
 [node name="Button4" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
 anchor_top = 0.571
@@ -201,6 +220,13 @@ focus_neighbour_bottom = NodePath("../Button")
 focus_next = NodePath("../Button")
 focus_previous = NodePath("../Button3")
 icon = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button4"]
+margin_left = 248.0
+margin_top = 3.05176e-05
+margin_right = 278.0
+margin_bottom = 30.0
+expand = true
 
 [node name="Label" type="Label" parent="LevelUpLayer/LevelUp"]
 margin_left = 505.0

@@ -3,6 +3,7 @@
         "name": "Quake",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_earth",
         "scene": "PulseAttack",
         "rarity": "common"
     },
@@ -10,6 +11,7 @@
         "name": "Boulder toss",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_earth",
         "scene": "PulseAttack",
         "rarity": "common"
     },
@@ -17,13 +19,15 @@
         "name": "Flamethrower",
         "desc": "",
         "icon": "debug_icon",
-        "scene": "PulseAttack",
+        "element": "rune_fire",
+        "scene": "FireAttack",
         "rarity": "rare"
     },
     "3": {
         "name": "Immolation",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_fire",
         "scene": "PulseAttack",
         "rarity": "epic"
     },
@@ -31,6 +35,7 @@
         "name": "Holy water",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_water",
         "scene": "PulseAttack",
         "rarity": "rare"
     },
@@ -38,6 +43,7 @@
         "name": "Water missile",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_water",
         "scene": "PulseAttack",
         "rarity": "rare"
     },
@@ -45,13 +51,15 @@
         "name": "Air cutter",
         "desc": "Sends out sharp cuts of air forward.",
         "icon": "whip_icon",
-        "scene": "WhipAttack",
+        "element": "rune_air",
+        "scene": "AirCutterAttack",
         "rarity": "common"
     },
     "7": {
         "name": "Gale boomerang",
         "desc": "",
         "icon": "debug_icon",
+        "element": "rune_air",
         "scene": "PulseAttack",
         "rarity": "common"
     }
