@@ -13,7 +13,6 @@ onready var hit_timer = $HitTimer
 onready var invic_timer = $InvincibilityTimer
 onready var sprite = $Sprite
 
-
 #xp, hp, etc
 var xp = 0
 var max_hp = 100
@@ -117,10 +116,8 @@ func damage(damage):
 	is_invincible = true
 	sprite.modulate.a = 0.5
 
-
 func _on_HitTimer_timeout():
 	is_hit = false
-
 
 func _on_InvincibilityTimer_timeout():
 	is_invincible = false

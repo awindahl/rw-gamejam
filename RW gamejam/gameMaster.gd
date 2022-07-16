@@ -13,7 +13,7 @@ func _process(delta):
 	time+=delta
 	if (time > 3):
 		time = 0
-		var coords = get_coordinates_on_viewport(viewport_size, randi() % 360)
+		var coords = get_coordinates_on_viewport(viewport_size*1.2, randi() % 360)
 		var childEnemy
 		if (randi() % 10 > 4):
 			childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 75, 10)

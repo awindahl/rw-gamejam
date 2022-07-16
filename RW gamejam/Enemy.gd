@@ -35,7 +35,6 @@ func _process(_delta):
 func damage(ammount):
 	_health = _health-ammount
 	var newDamage = damageText.instance().init(ammount)
-	#newDamage.position = position
 	add_child(newDamage)
 	print(ammount)
 	if (_health <= 0):
@@ -48,7 +47,7 @@ func die():
 
 func die_deferred():
 	coll.disabled = true
-	var new_pickup = pickup.instance().init(_xp)
+	var new_pickup = pickup.instance().init(0, _xp)
 	new_pickup.position = position
 	get_parent().add_child(new_pickup)
 
