@@ -1,6 +1,6 @@
 extends Area2D
 
-enum itemTypes {XP, WEAPON, SECONDARY, HEALTH, GOLD, FREEZE}
+enum itemTypes {XP, WEAPON, SECONDARY, HEALTH, GOLD, FREEZE, MISC}
 enum weaponValue {WHIP, AXE, SPELL, SPELL2, SPELL3, SPELL4}
 enum secondaryValue {ATTACKSPD, AREA, SIZE, XPGAIN, HP, HPREGEN}
 enum goldValue {SMALL, MEDIUM, BIG, REALLYBIG}
@@ -25,6 +25,8 @@ func _ready():
 			match _value:
 				weaponValue.WHIP:
 					pickup_image = load("res://Assets/whip_icon.png")
+		itemTypes.MISC:
+			pickup_image = load("res://Assets/red_hat_icon.png")
 	$Sprite.texture = pickup_image
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +52,8 @@ func _on_Pickup_body_entered(body):
 				pass
 			itemTypes.FREEZE:
 				pass
+			itemTypes.MISC:
+				body.change_clothes("wizard_red")
 		queue_free()
 
 func _add_weapon_deferred(body, weapon):

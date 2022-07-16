@@ -100,6 +100,7 @@ tracks/3/keys = {
 extents = Vector2( 33, 2 )
 
 [node name="WhipAttack" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

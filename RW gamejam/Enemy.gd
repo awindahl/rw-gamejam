@@ -13,18 +13,21 @@ var _speed = 0
 var _health = 0
 var _xp = 0
 var _spriteSheet = ""
+var _scale = 1
 
-func init(spritesheet, type, health, speed, xp):
+func init(spritesheet, type, health, speed, xp, scaled):
 	_health = health
 	_speed = speed
 	_type = type
 	_xp = xp
 	_spriteSheet = spritesheet
+	_scale = scaled
 	return self
 
 func _ready():
 	var enemy_texture = load("res://images/" + _spriteSheet + ".png")
 	sprite.texture = enemy_texture
+	sprite.scale = Vector2(_scale, _scale)
 
 func _process(_delta):
 	var position_difference = player.position - position

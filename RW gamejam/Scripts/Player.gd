@@ -13,6 +13,7 @@ onready var hit_timer = $HitTimer
 onready var invic_timer = $InvincibilityTimer
 onready var sprite = $Sprite
 onready var weapon_label = $CanvasLayer/UI/WeaponsLabel
+onready var animator = $AnimationPlayer
 
 #xp, hp, etc
 var xp = 0
@@ -68,12 +69,17 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("ui_left"):
 		weapons.scale.x = -1
+		if sprite.flip_h != true:
+			sprite.flip_h = true
 		
 	if Input.is_action_just_pressed("ui_right"):
 		weapons.scale.x = 1
+		if sprite.flip_h == true:
+			sprite.flip_h = false
 	
 	#movement direction handler
 	if up or down or left or right:
+		animator.play("walk")
 		if up:
 			direction.y = -1
 		elif down:
@@ -89,6 +95,7 @@ func _process(_delta):
 		
 	#smoothly decelerate
 	elif not (up and down and left and right):
+		animator.stop(false)
 		direction *= 0
 	
 	#smoothly accelerate
@@ -136,3 +143,7 @@ func _on_HitTimer_timeout():
 func _on_InvincibilityTimer_timeout():
 	is_invincible = false
 	sprite.modulate.a = 1
+
+func change_clothes(type):
+	var clothes = load("res://Assets/"+type+".png")
+	sprite.texture = clothes
