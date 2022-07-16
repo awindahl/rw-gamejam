@@ -2,12 +2,16 @@ extends Area2D
 
 var has_player = false
 var Player = null
-var speed = 3
+var speed = 5
+var _xp = 1
+
+func init(xp):
+	_xp = xp
+	return self
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -17,8 +21,8 @@ func _process(delta):
 	else:
 		pass
 
-
 func _on_Pickup_body_entered(body):
 	if body.is_in_group("Player"):
-		body.xp += 1
+		body.xp += _xp
+		
 		queue_free()

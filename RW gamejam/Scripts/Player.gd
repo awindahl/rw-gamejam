@@ -51,7 +51,7 @@ func _update_ring():
 	aoe_hitbox_size.shape.radius = aoe_size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	UI_update()
 	
 	#checks every frame which keys are down
@@ -92,9 +92,9 @@ func _process(delta):
 	velocity.y = lerp(velocity.y, direction.y, acceleration)
 	
 	if not is_hit:
-		move_and_slide(velocity * move_speed)
+		var _m = move_and_slide(velocity * move_speed)
 	elif is_hit:
-		move_and_slide(hit_dir * 20)
+		var _m = move_and_slide(hit_dir * 20)
 
 func UI_update():
 	XP_bar.value = xp
