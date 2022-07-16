@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Rw Gamejam"
-run/main_scene="res://TestBench.tscn"
+run/main_scene="res://GameScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]

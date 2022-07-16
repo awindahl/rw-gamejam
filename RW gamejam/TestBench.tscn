@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/PlayerCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/BackgroundTiles.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/WhipAttack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Pickup.tscn" type="PackedScene" id=4]
 
 [node name="TestBench" type="Node2D"]
 
@@ -24,9 +24,6 @@ tile_data = PoolIntArray( -262153, 18, 0, -262152, 18, 0, -262151, 18, 0, -26215
 position = Vector2( 56, 128 )
 z_index = 0
 
-[node name="WhipAttack" parent="YSort/Player/Weapons" index="0" instance=ExtResource( 5 )]
-scale = Vector2( 2, 2 )
-
 [node name="PlayerCamera" parent="YSort/Player" instance=ExtResource( 1 )]
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -35,6 +32,14 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
+
+[node name="EnemyContainer" type="Node2D" parent="YSort"]
+
+[node name="PickupContainer" type="Node2D" parent="YSort"]
+
+[node name="Pickup" parent="YSort/PickupContainer" instance=ExtResource( 4 )]
+position = Vector2( -293, 128 )
+_type = 1
 
 [node name="Foreground1" type="TileMap" parent="YSort"]
 z_index = -1
