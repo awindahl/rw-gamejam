@@ -43,7 +43,6 @@ func _on_Pickup_body_entered(body):
 				body.UI_update()
 			"weapon":
 				body.give_weapon(_value)
-				body.weapon_update()
 			"passive":
 				pass
 			"consumable":

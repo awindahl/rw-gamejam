@@ -14,6 +14,7 @@ var _health = 0
 var _xptype = 0
 var _spriteSheet = ""
 var _scale = 1
+var _dead = false
 
 func init(spritesheet, type, health, speed, xptype, scaled):
 	_health = health
@@ -43,9 +44,9 @@ func damage(ammount):
 	_health = _health-ammount
 	var newDamage = damageText.instance().init(ammount)
 	add_child(newDamage)
-	print(ammount)
-	if (_health <= 0):
+	if (_health <= 0 && !_dead):
 		_health = 0
+		_dead = true
 		die()
 
 func die():

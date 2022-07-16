@@ -114,6 +114,7 @@ func give_weapon(weapon):
 
 func give_weapon_deferred(weapon):
 	get_node("Weapons").add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon)]["scene"]+".tscn").instance())
+	weapon_update()
 
 func weapon_update():
 	weapon_label.text = "Current weapons: \n"

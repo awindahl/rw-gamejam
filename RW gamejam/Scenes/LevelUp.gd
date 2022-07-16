@@ -20,17 +20,17 @@ func level_up():
 		var random_roll = randi() % 101
 		if (random_roll > DataMaster.rarity.epic):
 			for obj in DataMaster.weapons:
-				if DataMaster.weapons[obj]["rarity"] == "epic" && !pool.has(DataMaster.weapons[obj]):
+				if DataMaster.weapons[obj]["rarity"] == "epic" && !pool.has(obj):
 					temp_pool.append(obj)
 			pool.append(temp_pool[randi() % temp_pool.size()])
 		elif (random_roll > DataMaster.rarity.rare):
 			for obj in DataMaster.weapons:
-				if DataMaster.weapons[obj]["rarity"] == "rare" && !pool.has(DataMaster.weapons[obj]):
+				if DataMaster.weapons[obj]["rarity"] == "rare" && !pool.has(obj):
 					temp_pool.append(obj)
 			pool.append(temp_pool[randi() % temp_pool.size()])
 		else:
 			for obj in DataMaster.weapons:
-				if DataMaster.weapons[obj]["rarity"] == "common" && !pool.has(DataMaster.weapons[obj]):
+				if DataMaster.weapons[obj]["rarity"] == "common" && !pool.has(obj):
 					temp_pool.append(obj)
 			pool.append(temp_pool[randi() % temp_pool.size()])
 	btn.text = DataMaster.weapons[pool[0]]["name"]
@@ -47,22 +47,18 @@ func _on_Button_button_down():
 	visible = false
 	get_tree().paused = false
 	get_parent().get_parent().give_weapon(pool[0])
-	get_parent().get_parent().weapon_update()
 
 func _on_Button2_button_down():
 	visible = false
 	get_tree().paused = false
 	get_parent().get_parent().give_weapon(pool[1])
-	get_parent().get_parent().weapon_update()
 
 func _on_Button3_button_down():
 	visible = false
 	get_tree().paused = false
 	get_parent().get_parent().give_weapon(pool[2])
-	get_parent().get_parent().weapon_update()
 
 func _on_Button4_button_down():
 	visible = false
 	get_tree().paused = false
 	get_parent().get_parent().give_weapon(pool[3])
-	get_parent().get_parent().weapon_update()

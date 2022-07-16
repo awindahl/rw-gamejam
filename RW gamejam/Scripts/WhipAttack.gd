@@ -24,5 +24,4 @@ func _on_Timer_timeout():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemies"):
-		print("damaing enemy")
 		body.damage(damage)
