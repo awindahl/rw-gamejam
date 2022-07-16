@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
+onready var damageText = preload("res://Scenes/DamageText.tscn")
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 onready var player = $"/root/TestBench/Player"
 onready var coll = $Area2D/CollisionShape2D
-onready var pickup = preload("res://Scenes/Pickup.tscn");
+onready var pickup = preload("res://Scenes/Pickup.tscn")
 var _type = ""
 var _speed = 0
 var _health = 0
@@ -33,6 +34,9 @@ func _process(_delta):
 
 func damage(ammount):
 	_health = _health-ammount
+	var newDamage = damageText.instance().init(ammount)
+	#newDamage.position = position
+	add_child(newDamage)
 	print(ammount)
 	if (_health <= 0):
 		_health = 0
