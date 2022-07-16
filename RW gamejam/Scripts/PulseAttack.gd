@@ -41,7 +41,7 @@ func _on_ParticleTimer_timeout():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemies"):
-		body.damage(5)
+		body.damage(damage)
 	
 
 
