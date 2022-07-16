@@ -12,6 +12,7 @@ onready var blood_particles = preload("res://Scenes/BloodParticles.tscn")
 onready var hit_timer = $HitTimer
 onready var invic_timer = $InvincibilityTimer
 onready var sprite = $Sprite
+onready var weapon_label = $CanvasLayer/UI/WeaponsLabel
 
 #xp, hp, etc
 var xp = 0
@@ -30,6 +31,9 @@ var cancel
 #how big the area around the player is for picking up items
 var aoe_size = 80
 
+#weapons array
+var current_weapon_array = []
+
 #player movement
 var move_speed = 250
 var acceleration = 0.5
@@ -43,6 +47,7 @@ var hit_dir = Vector2()
 func _ready():
 	current_hp = max_hp
 	_update_ring()
+	weapon_update()
 
 # Called when pickup area size is changed.
 func _update_ring():
@@ -95,10 +100,19 @@ func _process(_delta):
 	elif is_hit:
 		var _m = move_and_slide(hit_dir * 20)
 
+
+func weapon_update():
+	weapon_label.text += "\n"
+	
+	for weapon in weapons.get_children():
+		weapon_label.text += "\n"
+		weapon_label.text += weapon.name
+
 func UI_update():
 	XP_bar.value = xp
 	HP_bar.value = current_hp
 	HP_bar.max_value = max_hp
+	
 
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Pickups"):

@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/UI_xpbar_bg.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 30 )
+extents = Vector2( 31, 32 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.0
@@ -46,6 +46,12 @@ hue_variation = -0.09
 
 [node name="Weapons" type="Node2D" parent="."]
 
+[node name="DebugWeapon1" type="Node2D" parent="Weapons"]
+
+[node name="DebugWeapon2" type="Node2D" parent="Weapons"]
+
+[node name="DebugWeapon3" type="Node2D" parent="Weapons"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="CanvasLayer"]
@@ -58,6 +64,13 @@ margin_bottom = 1.0
 rounded = true
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 3 )
+
+[node name="WeaponsLabel" type="Label" parent="CanvasLayer/UI"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 80.0
+margin_bottom = 62.0
+text = "Current weapons:"
 
 [node name="HPbar" type="TextureProgress" parent="."]
 margin_left = -30.0

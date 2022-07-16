@@ -3,9 +3,11 @@ extends KinematicBody2D
 onready var damageText = preload("res://Scenes/DamageText.tscn")
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
-onready var player = $"/root/TestBench/Player"
+
+onready var player = $"/root/TestBench/YSort/Player"
 onready var coll = $Area2D/CollisionShape2D
 onready var pickup = preload("res://Scenes/Pickup.tscn")
+
 var _type = ""
 var _speed = 0
 var _health = 0

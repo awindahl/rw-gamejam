@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Assets/tile_grass.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tilesheet_bg.png" type="Texture" id=1]
 
 [node name="BackgroundTiles" type="Node2D"]
 
-[node name="Grass" type="Sprite" parent="."]
+[node name="Tiles" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+centered = false
