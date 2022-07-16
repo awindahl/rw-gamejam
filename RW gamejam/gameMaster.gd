@@ -2,11 +2,16 @@ extends Node
 
 onready var enemy = preload("res://Enemy.tscn")
 onready var viewport_size = get_viewport().get_visible_rect().size
-onready var camera = $"/root/TestBench/YSort/Player"
+var level
+var camera
+export var levelScene = "TestBench"
 var time = 0
 
 func _ready():
 	randomize()
+	level = load("res://"+ levelScene + ".tscn").instance()
+	get_node("/root/GameScene").add_child(level)
+	camera = level.get_node("YSort/Player")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,7 +25,7 @@ func _process(delta):
 		else:
 			childEnemy = enemy.instance().init("skele_sheet", "ground", 60, 20, 100)
 		childEnemy.position = Vector2(camera.position.x + coords.x, camera.position.y + coords.y)
-		add_child(childEnemy)
+		level.get_node("YSort/EnemyContainer").add_child(childEnemy)
 
 func get_coordinates_on_viewport(rect, deg):
 	var twopi = PI*2;
