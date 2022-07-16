@@ -42,8 +42,9 @@ func _process(_delta):
 
 func damage(ammount):
 	_health = _health-ammount
-	var newDamage = damageText.instance().init(ammount)
-	add_child(newDamage)
+	if (!_dead):
+		var newDamage = damageText.instance().init(ammount)
+		add_child(newDamage)
 	if (_health <= 0 && !_dead):
 		_health = 0
 		_dead = true
