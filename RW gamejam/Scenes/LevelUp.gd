@@ -1,13 +1,14 @@
 extends Control
 
-onready var btn = $ColorRect/Button
-onready var btn2 = $ColorRect/Button2
-onready var btn3 = $ColorRect/Button3
-onready var btn4 = $ColorRect/Button4
+onready var btn = $Button
+onready var btn2 = $Button2
+onready var btn3 = $Button3
+onready var btn4 = $Button4
 
 func _ready():
 	# randomly get 4 items from pool
 	# assign items to buttons
+	print(btn4)
 	pass
 
 #func _process(delta):
