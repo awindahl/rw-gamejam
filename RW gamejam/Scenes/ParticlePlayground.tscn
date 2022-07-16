@@ -94,7 +94,6 @@ color = Color( 1, 1, 1, 0.0784314 )
 color_ramp = SubResource( 11 )
 
 [node name="GroundPound" type="CPUParticles2D" parent="."]
-visible = false
 z_index = -1
 amount = 64
 speed_scale = 2.34
@@ -123,7 +122,6 @@ scale_amount = 0.42
 color = Color( 1, 0, 0, 0.333333 )
 
 [node name="Beam" type="CPUParticles2D" parent="Arcane"]
-visible = false
 position = Vector2( 0, 40 )
 amount = 32
 lifetime = 1.46
