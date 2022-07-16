@@ -2,7 +2,7 @@
     "0": {
         "name": "Quake",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "quake_icon",
         "element": "rune_earth",
         "scene": "PulseAttack",
         "rarity": "common"
@@ -10,7 +10,7 @@
     "1": {
         "name": "Boulder toss",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "boulder_toss_icon",
         "element": "rune_earth",
         "scene": "PulseAttack",
         "rarity": "common"
@@ -18,7 +18,7 @@
     "2": {
         "name": "Flamethrower",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "flamethrower_icon",
         "element": "rune_fire",
         "scene": "FireAttack",
         "rarity": "rare"
@@ -26,7 +26,7 @@
     "3": {
         "name": "Immolation",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "immolation_icon",
         "element": "rune_fire",
         "scene": "PulseAttack",
         "rarity": "epic"
@@ -34,7 +34,7 @@
     "4": {
         "name": "Holy water",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "holy_water_icon",
         "element": "rune_water",
         "scene": "PulseAttack",
         "rarity": "rare"
@@ -42,7 +42,7 @@
     "5": {
         "name": "Water missile",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "water_missile_icon",
         "element": "rune_water",
         "scene": "PulseAttack",
         "rarity": "rare"
@@ -50,7 +50,7 @@
     "6": {
         "name": "Air cutter",
         "desc": "Sends out sharp cuts of air forward.",
-        "icon": "whip_icon",
+        "icon": "air_cutter_icon",
         "element": "rune_air",
         "scene": "AirCutterAttack",
         "rarity": "common"
@@ -58,7 +58,7 @@
     "7": {
         "name": "Gale boomerang",
         "desc": "",
-        "icon": "debug_icon",
+        "icon": "gale_boomerang_icon",
         "element": "rune_air",
         "scene": "PulseAttack",
         "rarity": "common"
