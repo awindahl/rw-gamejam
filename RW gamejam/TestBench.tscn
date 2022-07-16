@@ -39,7 +39,6 @@ drag_margin_bottom = 0.1
 
 [node name="Pickup" parent="YSort/PickupContainer" instance=ExtResource( 4 )]
 position = Vector2( -293, 128 )
-_type = 1
 
 [node name="Foreground1" type="TileMap" parent="YSort"]
 z_index = -1

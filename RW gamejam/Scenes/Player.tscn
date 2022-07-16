@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/UI_xpbar_bg.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 30 )
+extents = Vector2( 31, 32 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.0
