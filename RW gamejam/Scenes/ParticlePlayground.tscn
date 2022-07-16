@@ -1,15 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/fire_01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/flame_03.png" type="Texture" id=2]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/spark_02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/trace_07.png" type="Texture" id=4]
+[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/magic_01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/circle_02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/trace_04.png" type="Texture" id=7]
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0.427273 ), 0.0, 1.65333, 0, 0, Vector2( 0.901515, 0.963636 ), -0.749999, -0.749999, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=4]
-offsets = PoolRealArray( 0, 0.796681, 0.937759 )
-colors = PoolColorArray( 0.859375, 0.194702, 0.194702, 1, 0.992188, 0.791982, 0.108521, 0.438762, 0.996078, 0.937255, 0.72549, 0 )
+offsets = PoolRealArray( 0, 0.66805, 1 )
+colors = PoolColorArray( 0.858824, 0.196078, 0.196078, 0.0235294, 0.876465, 0.479682, 0.0342369, 0.286275, 1, 0.5, 0, 0 )
 
 [sub_resource type="Curve" id=5]
 _data = [ Vector2( 0, 0.427273 ), 0.0, 1.65333, 0, 0, Vector2( 0.545455, 0.807955 ), 1.58, 1.58, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
@@ -18,29 +22,39 @@ _data = [ Vector2( 0, 0.427273 ), 0.0, 1.65333, 0, 0, Vector2( 0.545455, 0.80795
 offsets = PoolRealArray( 0.0290456, 0.995851 )
 colors = PoolColorArray( 0.387573, 0.541353, 0.78125, 1, 0.254902, 1, 0.913725, 0 )
 
-[sub_resource type="Curve" id=7]
-_data = [ Vector2( 0, 0.427273 ), 0.0, 1.65333, 0, 0, Vector2( 0.545455, 0.807955 ), 1.58, 1.58, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.898619, 0.928711, 0.431705, 0.81074 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0.412879, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.67803, 0.357955 ), -0.648648, -0.648648, 0, 0, Vector2( 1, 0 ), -2.89616, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=8]
-offsets = PoolRealArray( 0, 0.962656 )
-colors = PoolColorArray( 0.616723, 0.224867, 0.677246, 1, 0.910126, 1, 0.03125, 0 )
+offsets = PoolRealArray( 0.327801, 0.995851 )
+colors = PoolColorArray( 0.415527, 0.382094, 0.355471, 0.360784, 0.231373, 0.152941, 0.0941176, 0 )
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.630705, 0.987552 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.51123, 0.0659008, 0.0659008, 0 )
+
+[sub_resource type="Gradient" id=12]
+offsets = PoolRealArray( 0.369295, 0.995851 )
+colors = PoolColorArray( 0.521569, 0.858824, 1, 0.0941176, 1, 1, 1, 0.14902 )
 
 [node name="ParticlePlayground" type="Node2D"]
 
 [node name="Fire" type="CPUParticles2D" parent="."]
 visible = false
 amount = 128
-lifetime = 3.02
-speed_scale = 2.3
+lifetime = 4.84
+speed_scale = 5.84
 lifetime_randomness = 0.28
 local_coords = false
 draw_order = 1
 texture = ExtResource( 1 )
-flag_align_y = true
-spread = 54.21
+spread = 26.74
 gravity = Vector2( 0, 0 )
-initial_velocity = 273.38
-angular_velocity = 258.99
+initial_velocity = 143.88
 scale_amount = 0.8
 scale_amount_random = 1.0
 scale_amount_curve = SubResource( 3 )
@@ -64,23 +78,83 @@ scale_amount_random = 1.0
 scale_amount_curve = SubResource( 5 )
 color_ramp = SubResource( 6 )
 
-[node name="Lightning" type="CPUParticles2D" parent="."]
-amount = 256
-lifetime = 6.85
-speed_scale = 3.3
-explosiveness = 0.73
-lifetime_randomness = 1.0
-local_coords = false
+[node name="Shield" type="CPUParticles2D" parent="."]
+visible = false
+z_index = 2
+amount = 64
+lifetime = 0.18
+speed_scale = 0.11
 draw_order = 1
-texture = ExtResource( 3 )
-flag_align_y = true
-direction = Vector2( 0, 0 )
+texture = ExtResource( 6 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 553.96
-angular_velocity = 258.99
-orbit_velocity = 0.5
-scale_amount = 0.94
-scale_amount_random = 1.0
-scale_amount_curve = SubResource( 7 )
+initial_velocity = 201.44
+scale_amount = 0.46
+color = Color( 1, 1, 1, 0.0784314 )
+color_ramp = SubResource( 11 )
+
+[node name="GroundPound" type="CPUParticles2D" parent="."]
+visible = false
+z_index = -1
+amount = 64
+speed_scale = 2.34
+explosiveness = 1.0
+local_coords = false
+texture = ExtResource( 3 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 250.0
+scale_amount_curve = SubResource( 9 )
 color_ramp = SubResource( 8 )
+
+[node name="Arcane" type="CPUParticles2D" parent="."]
+visible = false
+z_index = 1
+amount = 64
+lifetime = 0.01
+speed_scale = 0.22
+local_coords = false
+texture = ExtResource( 5 )
+flag_align_y = true
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 158.23
+scale_amount = 0.42
+color = Color( 1, 0, 0, 0.333333 )
+
+[node name="Beam" type="CPUParticles2D" parent="Arcane"]
+visible = false
+position = Vector2( 0, 40 )
+amount = 32
+lifetime = 1.46
+speed_scale = 19.12
+draw_order = 1
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 6.32
+flag_align_y = true
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1000.0
+scale_amount = 0.5
+color_ramp = SubResource( 10 )
+hue_variation = 0.11
+hue_variation_random = 1.0
+
+[node name="Whirlwind" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2( -20, -8 )
+amount = 128
+lifetime = 1.2
+preprocess = 1.0
+speed_scale = 2.0
+local_coords = false
+texture = ExtResource( 7 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1000.0
+orbit_velocity = 1.0
+orbit_velocity_random = 0.07
+scale_amount_random = 1.0
+color_ramp = SubResource( 12 )
