@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
-onready var player = $"/root/TestBench/Player"
+onready var player = $"/root/TestBench/YSort/Player"
 
 var _type = ""
 var _speed = 0

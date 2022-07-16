@@ -2,7 +2,7 @@ extends Node
 
 onready var enemy = preload("res://Enemy.tscn")
 onready var viewport_size = get_viewport().get_visible_rect().size
-onready var camera = $"/root/TestBench/Player"
+onready var camera = $"/root/TestBench/YSort/Player"
 var time = 0
 
 func _ready():
