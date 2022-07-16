@@ -1,0 +1,58 @@
+{
+    "0": {
+        "name": "Gold",
+        "desc": "A piece of gold.",
+        "icon": "",
+        "rarity": 100,
+        "value": 1
+    },
+    "1": {
+        "name": "Pile of gold",
+        "desc": "Pieces of gold.",
+        "icon": "",
+        "rarity": 60,
+        "value": 10
+    },
+    "2": {
+        "name": "Bag of gold",
+        "desc": "A bag of gold!",
+        "icon": "",
+        "rarity": 40,
+        "value": 50
+    },
+    "3": {
+        "name": "Big bag of gold",
+        "desc": "wow! A big bag of gold!",
+        "icon": "",
+        "rarity": 20,
+        "value": 150
+    },
+    "4": {
+        "name": "Philosopher's stone",
+        "desc": "Absorbs every visible enemy.",
+        "icon": "",
+        "rarity": 10,
+        "value": 0
+    },
+    "5": {
+        "name": "Healing potion",
+        "desc": "Heals you.",
+        "icon": "",
+        "rarity": 50,
+        "value": 0
+    },
+    "6": {
+        "name": "Broken watch",
+        "desc": "Freezes time temporarily.",
+        "icon": "",
+        "rarity": 30,
+        "value": 0
+    },
+    "7": {
+        "name": "Unstable manacrystal",
+        "desc": "Overloads spell use.",
+        "icon": "",
+        "rarity": 30,
+        "value": 0
+    }
+}

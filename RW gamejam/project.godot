@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameMaster="*res://gameMaster.gd"
+DataMaster="*res://dataMaster.gd"
 
 [display]
 

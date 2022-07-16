@@ -1,0 +1,58 @@
+{
+    "0": {
+        "name": "Quake",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "common"
+    },
+    "1": {
+        "name": "Boulder toss",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "common"
+    },
+    "2": {
+        "name": "Flamethrower",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "rare"
+    },
+    "3": {
+        "name": "Immolation",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "epic"
+    },
+    "4": {
+        "name": "Holy water",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "rare"
+    },
+    "5": {
+        "name": "Water missile",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "rare"
+    },
+    "6": {
+        "name": "Air cutter",
+        "desc": "Sends out sharp cuts of air forward.",
+        "icon": "whip_icon",
+        "scene": "WhipAttack",
+        "rarity": "common"
+    },
+    "7": {
+        "name": "Gale boomerang",
+        "desc": "",
+        "icon": "debug_icon",
+        "scene": "PulseAttack",
+        "rarity": "common"
+    }
+}

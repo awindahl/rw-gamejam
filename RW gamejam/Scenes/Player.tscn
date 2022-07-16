@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/debug_icon.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31, 32 )
+extents = Vector2( 27, 30 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.0
@@ -97,6 +97,7 @@ mouse_filter = 2
 [node name="XPbar" type="TextureProgress" parent="CanvasLayer/UI"]
 anchor_right = 1.0
 margin_bottom = 1.0
+max_value = 50.0
 rounded = true
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 3 )
@@ -113,6 +114,7 @@ layer = 0
 
 [node name="LevelUp" type="Control" parent="LevelUpLayer"]
 pause_mode = 2
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -140,6 +142,10 @@ margin_top = 1.0
 margin_right = 3.03992
 margin_bottom = 1.31999
 rect_pivot_offset = Vector2( 162, 62 )
+focus_neighbour_top = NodePath("../Button4")
+focus_neighbour_bottom = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../Button4")
 icon = ExtResource( 8 )
 
 [node name="Button2" type="Button" parent="LevelUpLayer/LevelUp"]
@@ -152,6 +158,10 @@ margin_top = -0.0800171
 margin_right = -0.52002
 margin_bottom = 0.039978
 rect_pivot_offset = Vector2( 162, 62 )
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Button3")
+focus_next = NodePath("../Button3")
+focus_previous = NodePath("../Button")
 icon = ExtResource( 8 )
 
 [node name="Button3" type="Button" parent="LevelUpLayer/LevelUp"]
@@ -164,6 +174,10 @@ margin_top = -0.200012
 margin_right = -0.0800171
 margin_bottom = -0.320038
 rect_pivot_offset = Vector2( 119, 62 )
+focus_neighbour_top = NodePath("../Button2")
+focus_neighbour_bottom = NodePath("../Button4")
+focus_next = NodePath("../Button4")
+focus_previous = NodePath("../Button2")
 icon = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -179,6 +193,10 @@ margin_top = -0.120026
 margin_right = -0.0800171
 margin_bottom = 0.279968
 rect_pivot_offset = Vector2( 119, 62 )
+focus_neighbour_top = NodePath("../Button3")
+focus_neighbour_bottom = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button3")
 icon = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="LevelUpLayer/LevelUp"]

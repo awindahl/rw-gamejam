@@ -18,7 +18,7 @@ onready var animator = $AnimationPlayer
 
 #xp, hp, etc
 var xp = 0
-var nextLevel = 100
+var nextLevel = 50
 var max_hp = 100
 var current_hp = 100
 var is_invincible = false
@@ -109,6 +109,11 @@ func _process(_delta):
 	elif is_hit:
 		var _m = move_and_slide(hit_dir * 20)
 
+func give_weapon(weapon):
+	call_deferred("give_weapon_deferred", weapon)
+
+func give_weapon_deferred(weapon):
+	get_node("Weapons").add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon)]["scene"]+".tscn").instance())
 
 func weapon_update():
 	weapon_label.text = "Current weapons: \n"
@@ -129,6 +134,7 @@ func UI_update():
 	
 func level_up():
 	LevelUp.visible = true
+	LevelUp.level_up()
 	get_tree().paused = true
 
 func _on_Hitbox_area_entered(area):

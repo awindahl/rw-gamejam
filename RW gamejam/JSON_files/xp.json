@@ -1,0 +1,23 @@
+{
+    "0": {
+        "name": "Manacrystal",
+        "desc": "Mana.",
+        "icon": "placeholder_pickup",
+        "rarity": 0,
+        "value": 10
+    },
+    "1": {
+        "name": "Powerful manacrystal",
+        "desc": "More mana.",
+        "icon": "placeholder_pickup",
+        "rarity": 0,
+        "value": 50
+    },
+    "2": {
+        "name": "Bursting manacrystal",
+        "desc": "A lot of mana!",
+        "icon": "placeholder_pickup",
+        "rarity": 0,
+        "value": 150
+    }
+}

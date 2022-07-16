@@ -11,15 +11,15 @@ onready var pickup = preload("res://Scenes/Pickup.tscn")
 var _type = ""
 var _speed = 0
 var _health = 0
-var _xp = 0
+var _xptype = 0
 var _spriteSheet = ""
 var _scale = 1
 
-func init(spritesheet, type, health, speed, xp, scaled):
+func init(spritesheet, type, health, speed, xptype, scaled):
 	_health = health
 	_speed = speed
 	_type = type
-	_xp = xp
+	_xptype = xptype
 	_spriteSheet = spritesheet
 	_scale = scaled
 	return self
@@ -54,7 +54,7 @@ func die():
 
 func die_deferred():
 	coll.disabled = true
-	var new_pickup = pickup.instance().init(0, _xp)
+	var new_pickup = pickup.instance().init("xp", _xptype)
 	new_pickup.position = position
 	get_parent().get_parent().get_node("PickupContainer").add_child(new_pickup)
 
