@@ -27,7 +27,9 @@ func init(spritesheet, type, health, speed, xp, scaled):
 func _ready():
 	var enemy_texture = load("res://images/" + _spriteSheet + ".png")
 	sprite.texture = enemy_texture
-	sprite.scale = Vector2(_scale, _scale)
+	scale = Vector2(_scale, _scale)
+	if _type == "flying":
+		set_collision_layer_bit(0, false)
 
 func _process(_delta):
 	var position_difference = player.position - position
