@@ -6,6 +6,7 @@ onready var aoe_hitbox_size = $Hitbox/CollisionShape2D
 onready var attack_particles = $Hitbox/CPUParticles2D
 onready var weapons = $Weapons
 onready var UI = $CanvasLayer/UI
+onready var LevelUp = $LevelUpLayer/LevelUp  
 onready var XP_bar = $CanvasLayer/UI/XPbar
 onready var HP_bar = $HPbar
 onready var blood_particles = preload("res://Scenes/BloodParticles.tscn")
@@ -17,6 +18,7 @@ onready var animator = $AnimationPlayer
 
 #xp, hp, etc
 var xp = 0
+var nextLevel = 100
 var max_hp = 100
 var current_hp = 100
 var is_invincible = false
@@ -49,6 +51,7 @@ func _ready():
 	current_hp = max_hp
 	_update_ring()
 	weapon_update()
+	UI_update()
 
 # Called when pickup area size is changed.
 func _update_ring():
@@ -57,7 +60,6 @@ func _update_ring():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	UI_update()
 	
 	#checks every frame which keys are down
 	up = Input.is_action_pressed("ui_up")
@@ -109,17 +111,25 @@ func _process(_delta):
 
 
 func weapon_update():
-	weapon_label.text += "\n"
+	weapon_label.text = "Current weapons: \n"
 	
 	for weapon in weapons.get_children():
 		weapon_label.text += "\n"
 		weapon_label.text += weapon.name
 
 func UI_update():
+	if (xp >= nextLevel):
+		XP_bar.min_value = nextLevel
+		nextLevel = int(nextLevel + nextLevel*0.5)
+		XP_bar.max_value = nextLevel
+		level_up()
 	XP_bar.value = xp
 	HP_bar.value = current_hp
 	HP_bar.max_value = max_hp
 	
+func level_up():
+	LevelUp.visible = true
+	get_tree().paused = true
 
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Pickups"):
@@ -136,6 +146,7 @@ func damage(damage):
 	invic_timer.start()
 	is_invincible = true
 	sprite.modulate.a = 0.5
+	UI_update()
 
 func _on_HitTimer_timeout():
 	is_hit = false

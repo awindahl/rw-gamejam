@@ -42,6 +42,7 @@ func _on_Pickup_body_entered(body):
 		match _type:
 			itemTypes.XP:
 				body.xp += _value
+				body.UI_update()
 			itemTypes.WEAPON:
 				call_deferred("_add_weapon_deferred", body, "WhipAttack")
 			itemTypes.SECONDARY:
@@ -58,3 +59,4 @@ func _on_Pickup_body_entered(body):
 
 func _add_weapon_deferred(body, weapon):
 	body.get_node("Weapons").add_child(load("res://Scenes/"+weapon+".tscn").instance())
+	body.weapon_update()
