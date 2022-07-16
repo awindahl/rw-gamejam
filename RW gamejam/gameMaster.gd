@@ -21,9 +21,9 @@ func _process(delta):
 		var coords = get_coordinates_on_viewport(viewport_size*1.2, randi() % 360)
 		var childEnemy
 		if (randi() % 10 > 4):
-			childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 75, 10)
+			childEnemy = enemy.instance().init("bat_sheet", "flying", 31, 75, 10, 1)
 		else:
-			childEnemy = enemy.instance().init("skele_sheet", "ground", 60, 20, 100)
+			childEnemy = enemy.instance().init("skele_sheet", "ground", 60, 20, 100, 2)
 		childEnemy.position = Vector2(camera.position.x + coords.x, camera.position.y + coords.y)
 		level.get_node("YSort/EnemyContainer").add_child(childEnemy)
 

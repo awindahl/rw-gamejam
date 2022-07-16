@@ -11,7 +11,7 @@
 z_index = -1
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 128, 128 )
-cell_quadrant_size = 128
+cell_quadrant_size = 32
 cell_y_sort = true
 collision_layer = 3
 collision_mask = 3
@@ -39,6 +39,10 @@ drag_margin_bottom = 0.1
 
 [node name="Pickup" parent="YSort/PickupContainer" instance=ExtResource( 4 )]
 position = Vector2( -293, 128 )
+
+[node name="Pickup2" parent="YSort/PickupContainer" instance=ExtResource( 4 )]
+position = Vector2( -296, 275 )
+_type = 6
 
 [node name="Foreground1" type="TileMap" parent="YSort"]
 z_index = -1
