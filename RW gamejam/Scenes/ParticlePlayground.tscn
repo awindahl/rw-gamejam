@@ -100,6 +100,7 @@ color = Color( 1, 1, 1, 0.0784314 )
 color_ramp = SubResource( 11 )
 
 [node name="GroundPound" type="CPUParticles2D" parent="."]
+visible = false
 z_index = -1
 amount = 24
 speed_scale = 2.34
