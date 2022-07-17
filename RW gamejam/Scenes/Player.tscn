@@ -153,9 +153,8 @@ expand = true
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button"]
 margin_left = 75.0
 margin_top = 48.0
-margin_right = 429.0
-margin_bottom = 84.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_right = 243.0
+margin_bottom = 69.0
 
 [node name="Button2" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
@@ -182,9 +181,8 @@ expand = true
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button2"]
 margin_left = 74.0
 margin_top = 53.0
-margin_right = 428.0
-margin_bottom = 89.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_right = 237.0
+margin_bottom = 74.0
 
 [node name="Button3" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
@@ -215,9 +213,8 @@ expand = true
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button3"]
 margin_left = 75.0
 margin_top = 48.0
-margin_right = 429.0
-margin_bottom = 84.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_right = 226.0
+margin_bottom = 70.0
 
 [node name="Button4" type="Button" parent="LevelUpLayer/LevelUp"]
 anchor_left = 0.394
@@ -245,9 +242,8 @@ expand = true
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button4"]
 margin_left = 75.0
 margin_top = 53.0
-margin_right = 429.0
-margin_bottom = 89.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_right = 227.0
+margin_bottom = 76.0
 
 [node name="Label" type="Label" parent="LevelUpLayer/LevelUp"]
 margin_left = 505.0
