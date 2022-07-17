@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/flare_01.png" type="Texture" id=8]
 
 [sub_resource type="Curve" id=3]
-_data = [ Vector2( 0, 0.427273 ), 0.0, 1.65333, 0, 0, Vector2( 0.901515, 0.963636 ), -0.749999, -0.749999, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 1.65333, 0, 0, Vector2( 0.829545, 0.919318 ), 0.64, 0.64, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.66805, 1 )
@@ -52,7 +52,7 @@ colors = PoolColorArray( 1, 1, 1, 0.619608, 1, 1, 1, 0 )
 visible = false
 position = Vector2( 0, -16 )
 z_index = -1
-amount = 64
+amount = 24
 lifetime = 2.99
 speed_scale = 2.04
 lifetime_randomness = 0.28
@@ -62,8 +62,6 @@ flag_align_y = true
 spread = 13.69
 gravity = Vector2( 0, 0 )
 initial_velocity = 179.85
-scale_amount = 0.8
-scale_amount_random = 1.0
 scale_amount_curve = SubResource( 3 )
 color_ramp = SubResource( 4 )
 
@@ -104,7 +102,7 @@ color_ramp = SubResource( 11 )
 [node name="GroundPound" type="CPUParticles2D" parent="."]
 visible = false
 z_index = -1
-amount = 64
+amount = 24
 speed_scale = 2.34
 explosiveness = 1.0
 local_coords = false
@@ -112,6 +110,7 @@ texture = ExtResource( 3 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 250.0
+scale_amount = 0.5
 scale_amount_curve = SubResource( 9 )
 color_ramp = SubResource( 8 )
 
