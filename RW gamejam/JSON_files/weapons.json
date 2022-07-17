@@ -116,7 +116,7 @@
         "desc": "Throws an air boomerang at the closest enemy.",
         "icon": "gale_boomerang_icon",
         "element": "rune_air",
-        "scene": "PulseAttack",
+        "scene": "GaleBoomerangAttack",
         "area": 50,
         "cooldown": 1,
         "damage": 5,
