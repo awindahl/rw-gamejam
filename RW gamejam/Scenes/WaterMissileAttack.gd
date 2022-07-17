@@ -1,23 +1,26 @@
 extends Node2D
 
+var id = "5"
+var level = 1
 var area
 var cooldown
 var damage
 var speed
 var projectiles
 var duration
-var level = 1
 var projectile = preload("res://Scenes/WaterMissileProjectile.tscn")
 var toSpawn = 0
 var time = 0
 
 func _ready():
-	area = DataMaster.weapons["5"]["area"]
-	cooldown = DataMaster.weapons["5"]["cooldown"]
-	damage = DataMaster.weapons["5"]["damage"]
-	speed = DataMaster.weapons["5"]["projectile_speed"]
-	projectiles = DataMaster.weapons["5"]["projectiles"]
-	duration = DataMaster.weapons["5"]["duration"]
+	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
+	area = weaponData["area"]
+	cooldown = weaponData["cooldown"]
+	damage = weaponData["damage"]
+	speed = weaponData["projectile_speed"]
+	projectiles = weaponData["projectiles"]
+	duration = weaponData["duration"]
+	$AttackTimer.wait_time = cooldown
 
 func _process(delta):
 	time += delta
@@ -30,3 +33,14 @@ func _process(delta):
 
 func _on_AttackTimer_timeout():	
 	toSpawn = projectiles
+
+func level_up():
+	level += 1
+	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
+	area = weaponData["area"]
+	cooldown = weaponData["cooldown"]
+	damage = weaponData["damage"]
+	speed = weaponData["projectile_speed"]
+	projectiles = weaponData["projectiles"]
+	duration = weaponData["duration"]
+	$AttackTimer.wait_time = cooldown

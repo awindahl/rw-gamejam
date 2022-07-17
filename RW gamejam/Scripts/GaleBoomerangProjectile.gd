@@ -19,7 +19,7 @@ func _ready():
 	if player_dir < 0:
 		move_speed *= -1
 
-func _process(delta):
+func _process(_delta):
 	if not has_turned:
 		position.x += move_speed
 	elif has_turned:

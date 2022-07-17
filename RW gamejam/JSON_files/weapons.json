@@ -5,12 +5,63 @@
         "icon": "quake_icon",
         "element": "rune_earth",
         "scene": "PulseAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -22,12 +73,63 @@
         "icon": "boulder_toss_icon",
         "element": "rune_earth",
         "scene": "PulseAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -39,12 +141,63 @@
         "icon": "flamethrower_icon",
         "element": "rune_fire",
         "scene": "FireAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -56,12 +209,63 @@
         "icon": "immolation_icon",
         "element": "rune_fire",
         "scene": "PulseAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -73,12 +277,63 @@
         "icon": "holy_water_icon",
         "element": "rune_water",
         "scene": "PulseAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -86,16 +341,66 @@
     },
     "5": {
         "name": "Water missile",
-        "desc": "Attacks the closest enemy with water missiles.",
         "icon": "water_missile_icon",
         "element": "rune_water",
         "scene": "WaterMissileAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 3,
-        "projectile_speed": 20,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -107,12 +412,63 @@
         "icon": "air_cutter_icon",
         "element": "rune_air",
         "scene": "AirCutterAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
@@ -124,12 +480,63 @@
         "icon": "gale_boomerang_icon",
         "element": "rune_air",
         "scene": "GaleBoomerangAttack",
-        "area": 50,
-        "cooldown": 1,
-        "damage": 5,
-        "projectiles": 1,
-        "projectile_speed": 1,
-        "duration": 1,
+        "maxLevel": 6,
+        "levels": {
+            "1": {
+                "desc": "Attacks the closest enemy with water missiles.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 15,
+                "duration": 1
+            },
+            "2": {
+                "desc": "Increases projectile speed.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 1,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "3": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "4": {
+                "desc": "Lower cooldown.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "5": {
+                "desc": "Increases projectile damage.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 2,
+                "projectile_speed": 25,
+                "duration": 1
+            },
+            "6": {
+                "desc": "Adds an extra projectile.",
+                "area": 1,
+                "cooldown": 1.25,
+                "damage": 15,
+                "projectiles": 3,
+                "projectile_speed": 25,
+                "duration": 1
+            }
+        },
         "req_element": [],
         "req_items": [],
         "unlock_req": [],
