@@ -69,7 +69,8 @@ func _update_button(item_info):
 			_btn.text = DataMaster.weapons[item_info]["name"]
 			_btn.icon = load(icon_folder + DataMaster.weapons[item_info]["icon"] + ".png")
 			_btn.get_node("TextureRect").texture = load(icon_folder + DataMaster.weapons[item_info]["element"] + ".png")
-			_btn.get_node("RichTextLabel").text = DataMaster.weapons[item_info]["levels"][str(player.get_weapon_level(item_info))]["desc"]
+			var currLevel = player.get_weapon_level(item_info)
+			_btn.get_node("RichTextLabel").text = DataMaster.weapons[item_info]["levels"][str(currLevel+1)]["desc"]
 			break
 
 func _on_Button_button_down():

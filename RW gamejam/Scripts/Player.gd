@@ -141,13 +141,20 @@ func _weapon_update():
 		weapon_label.text += DataMaster.weapons[weapon.id]["name"]
 
 func get_weapon_level(weapon_id):
-	return 1
+	for _weapon in weapons.get_children():
+		if _weapon.id == weapon_id: 
+			return _weapon.level
+	return 0
 
 func get_player_weapons():
 	return weapons.get_children()
 
 func get_item_level(item_id):
 	return 1
+
+func get_player_items():
+#	return items.get_children()
+	pass
 
 func UI_update():
 	if (xp >= nextLevel):
