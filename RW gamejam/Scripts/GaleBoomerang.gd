@@ -8,7 +8,7 @@ var projectile_range = 1
 var damage = 10
 var player_dir = 0.0
 var time_to_live = 2
-var number_of_projectiles = 10
+var number_of_projectiles = 2
 var spawn = false
 
 func _ready():
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_AttackTimer_timeout():
-	for i in number_of_projectiles-1:
+	for i in number_of_projectiles:
 		player_dir = get_parent().get_parent().facing.x
 		var new_projectile = projectile.instance()
 		new_projectile.move_speed = move_speed
