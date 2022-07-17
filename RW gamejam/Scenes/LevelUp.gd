@@ -15,6 +15,7 @@ func _ready():
 
 func level_up():
 	pool = []
+	#check player items
 	for _i in 4:
 		var temp_pool = []
 		var random_roll = randi() % 101
@@ -22,17 +23,20 @@ func level_up():
 			for obj in DataMaster.weapons:
 				if DataMaster.weapons[obj]["rarity"] == "epic" && !pool.has(obj):
 					temp_pool.append(obj)
-			pool.append(temp_pool[randi() % temp_pool.size()])
+			if temp_pool.size() > 0:
+				pool.append(temp_pool[randi() % temp_pool.size()])
 		elif (random_roll > DataMaster.rarity.rare):
 			for obj in DataMaster.weapons:
 				if DataMaster.weapons[obj]["rarity"] == "rare" && !pool.has(obj):
 					temp_pool.append(obj)
-			pool.append(temp_pool[randi() % temp_pool.size()])
+			if temp_pool.size() > 0:
+				pool.append(temp_pool[randi() % temp_pool.size()])
 		else:
 			for obj in DataMaster.weapons:
 				if DataMaster.weapons[obj]["rarity"] == "common" && !pool.has(obj):
 					temp_pool.append(obj)
-			pool.append(temp_pool[randi() % temp_pool.size()])
+			if temp_pool.size() > 0:
+				pool.append(temp_pool[randi() % temp_pool.size()])
 	btn.text = DataMaster.weapons[pool[0]]["name"]
 	btn.icon = load(icon_folder + DataMaster.weapons[pool[0]]["icon"] + ".png")
 	btn.get_node("TextureRect").texture = load(icon_folder + DataMaster.weapons[pool[0]]["element"] + ".png")
