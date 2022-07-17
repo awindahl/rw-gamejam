@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/UI_xpbar_bg.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/LevelUp.gd" type="Script" id=7]
 [ext_resource path="res://Assets/debug_icon.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/PulseAttack.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GaleBoomerangAttack.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27, 30 )
@@ -88,7 +88,7 @@ hue_variation = -0.09
 
 [node name="DebugWeapon3" type="Node2D" parent="Weapons"]
 
-[node name="PulseAttack" parent="Weapons" instance=ExtResource( 9 )]
+[node name="GaleBoomerangAttack" parent="Weapons" instance=ExtResource( 9 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -69,6 +69,7 @@ color_ramp = SubResource( 4 )
 
 [node name="Water" type="CPUParticles2D" parent="."]
 visible = false
+emitting = false
 amount = 128
 lifetime = 4.22
 speed_scale = 5.09
@@ -130,7 +131,6 @@ scale_amount = 0.42
 color = Color( 1, 0, 0, 0.333333 )
 
 [node name="Beam" type="CPUParticles2D" parent="Arcane"]
-visible = false
 position = Vector2( 0, 40 )
 amount = 32
 lifetime = 1.46

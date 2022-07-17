@@ -44,6 +44,7 @@ var direction = Vector2()
 var velocity = Vector2()
 var is_hit = false
 var hit_dir = Vector2()
+var facing = Vector2()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,12 +70,14 @@ func _process(_delta):
 	select = Input.is_action_just_pressed("ui_accept")
 	cancel = Input.is_action_just_pressed("ui_cancel")
 	
-	if Input.is_action_just_pressed("ui_left"):
+	if velocity.x < 0:
+		facing.x = -1
 		weapons.scale.x = -1
 		if sprite.flip_h != true:
 			sprite.flip_h = true
 		
-	if Input.is_action_just_pressed("ui_right"):
+	if velocity.x > 0:
+		facing.x = 1
 		weapons.scale.x = 1
 		if sprite.flip_h == true:
 			sprite.flip_h = false

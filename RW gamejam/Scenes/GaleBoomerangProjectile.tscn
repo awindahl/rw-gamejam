@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/GaleBoomerangProjectile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/gale_boomerang_weapon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/star_08.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0912863, 1 )
+colors = PoolColorArray( 0.533333, 0.752941, 0.741176, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 35.0
+
+[node name="GaleBoomerangProjectile" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 64
+lifetime = 4.62
+preprocess = 1.0
+speed_scale = 2.93
+local_coords = false
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 32.36
+spread = 180.0
+gravity = Vector2( 0, 10 )
+angular_velocity = 90.0
+angular_velocity_random = 1.0
+scale_amount = 0.32
+color = Color( 0.533333, 0.752941, 0.741176, 1 )
+color_ramp = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/RESET = SubResource( 2 )
+anims/Spin = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+
+[node name="DistanceTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="DistanceTimer" to="." method="_on_DistanceTimer_timeout"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
