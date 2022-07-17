@@ -63,7 +63,9 @@ func _update_ring():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
+	if (xp >= nextLevel):
+		UI_update()
+		#check if we can level up again after our previous level up
 	#checks every frame which keys are down
 	up = Input.is_action_pressed("ui_up")
 	down = Input.is_action_pressed("ui_down")
@@ -129,17 +131,20 @@ func give_weapon_deferred(weapon_id):
 			break
 	if !hasWeapon && weapon_max_slots > weapons.get_child_count():
 		print("found a new shiny weapon! and we have extra slots!")
-		get_node("Weapons").add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon_id)]["scene"]+".tscn").instance())
+		weapons.add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon_id)]["scene"]+".tscn").instance())
 	_weapon_update()
 
 func _weapon_update():
 	weapon_label.text = "Current weapons: \n"
 	for weapon in weapons.get_children():
 		weapon_label.text += "\n"
-		weapon_label.text += weapon.name
+		weapon_label.text += DataMaster.weapons[weapon.id]["name"]
 
 func get_weapon_level(weapon_id):
 	return 1
+
+func get_player_weapons():
+	return weapons.get_children()
 
 func get_item_level(item_id):
 	return 1
@@ -147,7 +152,7 @@ func get_item_level(item_id):
 func UI_update():
 	if (xp >= nextLevel):
 		XP_bar.min_value = nextLevel
-		nextLevel = int(nextLevel + nextLevel*0.5)
+		nextLevel = int(nextLevel + pow(nextLevel,0.8))
 		XP_bar.max_value = nextLevel
 		level_up()
 	XP_bar.value = xp

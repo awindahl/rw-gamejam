@@ -127,6 +127,7 @@ mouse_filter = 2
 color = Color( 0.215686, 0.105882, 0.270588, 1 )
 
 [node name="Button" type="Button" parent="LevelUpLayer/LevelUp"]
+visible = false
 anchor_left = 0.393
 anchor_top = 0.225
 anchor_right = 0.607
@@ -136,10 +137,11 @@ margin_top = 1.0
 margin_right = 6.04004
 margin_bottom = 3.31999
 rect_pivot_offset = Vector2( 162, 62 )
-focus_neighbour_top = NodePath("../Button4")
+focus_neighbour_top = NodePath("../Skip level")
 focus_neighbour_bottom = NodePath("../Button2")
 focus_next = NodePath("../Button2")
-focus_previous = NodePath("../Button4")
+focus_previous = NodePath("../Skip level")
+disabled = true
 icon = ExtResource( 8 )
 clip_text = true
 align = 0
@@ -151,12 +153,14 @@ margin_bottom = 30.0
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button"]
-margin_left = 75.0
+margin_left = 60.0
 margin_top = 48.0
-margin_right = 243.0
-margin_bottom = 69.0
+margin_right = 347.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Button2" type="Button" parent="LevelUpLayer/LevelUp"]
+visible = false
 anchor_left = 0.394
 anchor_top = 0.339
 anchor_right = 0.609
@@ -170,7 +174,9 @@ focus_neighbour_top = NodePath("../Button")
 focus_neighbour_bottom = NodePath("../Button3")
 focus_next = NodePath("../Button3")
 focus_previous = NodePath("../Button")
+disabled = true
 icon = ExtResource( 8 )
+align = 0
 
 [node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button2"]
 margin_left = 249.0
@@ -179,12 +185,14 @@ margin_bottom = 30.0
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button2"]
-margin_left = 74.0
+margin_left = 61.0
 margin_top = 53.0
-margin_right = 237.0
-margin_bottom = 74.0
+margin_right = 351.0
+margin_bottom = 81.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Button3" type="Button" parent="LevelUpLayer/LevelUp"]
+visible = false
 anchor_left = 0.394
 anchor_top = 0.46
 anchor_right = 0.611
@@ -198,7 +206,9 @@ focus_neighbour_top = NodePath("../Button2")
 focus_neighbour_bottom = NodePath("../Button4")
 focus_next = NodePath("../Button4")
 focus_previous = NodePath("../Button2")
+disabled = true
 icon = ExtResource( 8 )
+align = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -211,12 +221,14 @@ margin_bottom = 31.0
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button3"]
-margin_left = 75.0
+margin_left = 59.0
 margin_top = 48.0
-margin_right = 226.0
-margin_bottom = 70.0
+margin_right = 349.0
+margin_bottom = 77.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Button4" type="Button" parent="LevelUpLayer/LevelUp"]
+visible = false
 anchor_left = 0.394
 anchor_top = 0.571
 anchor_right = 0.611
@@ -227,10 +239,12 @@ margin_right = -0.0800171
 margin_bottom = 0.279968
 rect_pivot_offset = Vector2( 119, 62 )
 focus_neighbour_top = NodePath("../Button3")
-focus_neighbour_bottom = NodePath("../Button")
-focus_next = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Skip level")
+focus_next = NodePath("../Skip level")
 focus_previous = NodePath("../Button3")
+disabled = true
 icon = ExtResource( 8 )
+align = 0
 
 [node name="TextureRect" type="TextureRect" parent="LevelUpLayer/LevelUp/Button4"]
 margin_left = 248.0
@@ -240,10 +254,27 @@ margin_bottom = 30.0
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="LevelUpLayer/LevelUp/Button4"]
-margin_left = 75.0
+margin_left = 62.0
 margin_top = 53.0
-margin_right = 227.0
-margin_bottom = 76.0
+margin_right = 348.0
+margin_bottom = 85.0
+rect_scale = Vector2( 0.75, 0.75 )
+
+[node name="Skip level" type="Button" parent="LevelUpLayer/LevelUp"]
+anchor_left = 0.394
+anchor_top = 0.571
+anchor_right = 0.611
+anchor_bottom = 0.676
+margin_left = -1.31998
+margin_top = 114.88
+margin_right = -1.07996
+margin_bottom = 115.28
+rect_pivot_offset = Vector2( 119, 62 )
+focus_neighbour_top = NodePath("../Button4")
+focus_neighbour_bottom = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button4")
+text = "Skip level"
 
 [node name="Label" type="Label" parent="LevelUpLayer/LevelUp"]
 margin_left = 505.0
@@ -280,5 +311,6 @@ anims/walk = SubResource( 4 )
 [connection signal="button_down" from="LevelUpLayer/LevelUp/Button2" to="LevelUpLayer/LevelUp" method="_on_Button2_button_down"]
 [connection signal="button_down" from="LevelUpLayer/LevelUp/Button3" to="LevelUpLayer/LevelUp" method="_on_Button3_button_down"]
 [connection signal="button_down" from="LevelUpLayer/LevelUp/Button4" to="LevelUpLayer/LevelUp" method="_on_Button4_button_down"]
+[connection signal="button_down" from="LevelUpLayer/LevelUp/Skip level" to="LevelUpLayer/LevelUp" method="_on_Skip_level_button_down"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
