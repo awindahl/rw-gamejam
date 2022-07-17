@@ -36,6 +36,8 @@ var aoe_size = 80
 
 #weapons array
 var current_weapon_array = []
+var weapon_max_slots = 4
+var item_max_slots = 4
 
 #player movement
 var move_speed = 250
@@ -51,7 +53,7 @@ var facing = Vector2()
 func _ready():
 	current_hp = max_hp
 	_update_ring()
-	weapon_update()
+	_weapon_update()
 	UI_update()
 
 # Called when pickup area size is changed.
@@ -112,19 +114,35 @@ func _process(_delta):
 	elif is_hit:
 		var _m = move_and_slide(hit_dir * 20)
 
-func give_weapon(weapon):
-	call_deferred("give_weapon_deferred", weapon)
+func give_weapon(weapon): call_deferred("give_weapon_deferred", weapon)
+func give_weapon_deferred(weapon_id):
+	var hasWeapon = false
+	for weapon in weapons.get_children():
+		if (weapon.id == weapon_id && weapon.level < DataMaster.weapons[str(weapon_id)]["maxLevel"]):
+			print("leveling up weapon! found a weapon equipped that is not max level")
+			weapon.level_up();
+			hasWeapon = true
+			break
+		elif (weapon.id == weapon_id):
+			print("found a max leveled weapon")
+			hasWeapon = true
+			break
+	if !hasWeapon && weapon_max_slots > weapons.get_child_count():
+		print("found a new shiny weapon! and we have extra slots!")
+		get_node("Weapons").add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon_id)]["scene"]+".tscn").instance())
+	_weapon_update()
 
-func give_weapon_deferred(weapon):
-	get_node("Weapons").add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon)]["scene"]+".tscn").instance())
-	weapon_update()
-
-func weapon_update():
+func _weapon_update():
 	weapon_label.text = "Current weapons: \n"
-	
 	for weapon in weapons.get_children():
 		weapon_label.text += "\n"
 		weapon_label.text += weapon.name
+
+func get_weapon_level(weapon_id):
+	return 1
+
+func get_item_level(item_id):
+	return 1
 
 func UI_update():
 	if (xp >= nextLevel):
