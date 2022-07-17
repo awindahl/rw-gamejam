@@ -55,10 +55,10 @@ texture = ExtResource( 3 )
 emission_shape = 1
 emission_sphere_radius = 32.36
 spread = 180.0
-gravity = Vector2( 0, 10 )
+gravity = Vector2( 0, 0 )
 angular_velocity = 90.0
 angular_velocity_random = 1.0
-scale_amount = 0.32
+scale_amount = 0.12
 color = Color( 0.533333, 0.752941, 0.741176, 1 )
 color_ramp = SubResource( 1 )
 
