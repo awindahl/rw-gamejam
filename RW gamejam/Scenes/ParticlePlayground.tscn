@@ -56,6 +56,7 @@ amount = 64
 lifetime = 2.99
 speed_scale = 2.04
 lifetime_randomness = 0.28
+local_coords = false
 texture = ExtResource( 1 )
 flag_align_y = true
 spread = 13.69
@@ -68,6 +69,7 @@ color_ramp = SubResource( 4 )
 
 [node name="Water" type="CPUParticles2D" parent="."]
 visible = false
+emitting = false
 amount = 128
 lifetime = 4.22
 speed_scale = 5.09
