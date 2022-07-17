@@ -13,7 +13,6 @@ func _ready():
 	get_node("/root/GameScene").add_child(level)
 	camera = level.get_node("YSort/Player")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time+=delta
 	if (time > 3):
@@ -67,3 +66,9 @@ func get_coordinates_on_viewport(rect, deg):
 		edge_point.y += y_factor * (rect.y/2)
 	
 	return Vector2(edge_point.x-rect.x/2, edge_point.y-rect.y/2)
+
+func get_enemy_objects():
+	return level.get_node("YSort/EnemyContainer").get_children()
+	
+func get_pickup_objects():
+	return level.get_node("YSort/PickupContainer").get_children()

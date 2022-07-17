@@ -54,5 +54,12 @@
         "icon": "",
         "rarity": 30,
         "value": 0
+    },
+    "8": {
+        "name": "Magnet",
+        "desc": "Attrackts all pickups on the ground.",
+        "icon": "",
+        "rarity": 40,
+        "value": 0
     }
 }
