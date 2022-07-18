@@ -72,7 +72,7 @@
         "desc": "Tosses a boulder at random enemies.",
         "icon": "boulder_toss_icon",
         "element": "rune_earth",
-        "scene": "PulseAttack",
+        "scene": "BoulderTossAttack",
         "maxLevel": 6,
         "levels": {
             "1": {
@@ -277,10 +277,10 @@
         "icon": "holy_water_icon",
         "element": "rune_water",
         "scene": "HolyWaterAttack",
-        "maxLevel": 6,
+        "maxLevel": 7,
         "levels": {
             "1": {
-                "desc": "Attacks the closest enemy with water missiles.",
+                "desc": "Throws a bottle of holy water on the ground.",
                 "area": 1,
                 "cooldown": 2,
                 "damage": 10,
@@ -289,15 +289,6 @@
                 "duration": 5
             },
             "2": {
-                "desc": "Increases projectile speed.",
-                "area": 1,
-                "cooldown": 2,
-                "damage": 10,
-                "projectiles": 1,
-                "projectile_speed": 1,
-                "duration": 5
-            },
-            "3": {
                 "desc": "Adds an extra projectile.",
                 "area": 1,
                 "cooldown": 2,
@@ -305,6 +296,15 @@
                 "projectiles": 2,
                 "projectile_speed": 1,
                 "duration": 5
+            },
+            "3": {
+                "desc": "Increases duration.",
+                "area": 1,
+                "cooldown": 2,
+                "damage": 10,
+                "projectiles": 2,
+                "projectile_speed": 1,
+                "duration": 8
             },
             "4": {
                 "desc": "Lower cooldown.",
@@ -313,25 +313,34 @@
                 "damage": 10,
                 "projectiles": 2,
                 "projectile_speed": 1,
-                "duration": 5
+                "duration": 8
             },
             "5": {
-                "desc": "Increases projectile damage.",
+                "desc": "Increases area damage.",
                 "area": 1,
                 "cooldown": 1.25,
-                "damage": 15,
+                "damage": 20,
                 "projectiles": 2,
                 "projectile_speed": 1,
-                "duration": 5
+                "duration": 8
             },
             "6": {
+                "desc": "Increases area.",
+                "area": 1.5,
+                "cooldown": 1.25,
+                "damage": 20,
+                "projectiles": 2,
+                "projectile_speed": 1,
+                "duration": 8
+            },
+            "7": {
                 "desc": "Adds an extra projectile.",
                 "area": 1,
                 "cooldown": 1.25,
-                "damage": 15,
+                "damage": 20,
                 "projectiles": 3,
                 "projectile_speed": 1,
-                "duration": 5
+                "duration": 8
             }
         },
         "req_element": [],
