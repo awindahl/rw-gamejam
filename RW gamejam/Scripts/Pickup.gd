@@ -24,7 +24,7 @@ func _ready():
 		"consumable":
 			pass
 		"misc":
-			pickup_image = load(icon_folder + "red_hat_icon.png")
+			pickup_image = load(icon_folder + "crown_icon.png")
 	$Sprite.texture = pickup_image
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,5 +48,5 @@ func _on_Pickup_body_entered(body):
 			"consumable":
 				pass
 			"misc":
-				body.change_clothes("wizard_red")
+				body.change_clothes("birthday_wizard")
 		queue_free()
