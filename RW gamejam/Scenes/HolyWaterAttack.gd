@@ -1,6 +1,6 @@
 extends Node2D
 
-var id = "5"
+var id = "4"
 var level = 1
 var area
 var cooldown
@@ -8,7 +8,7 @@ var damage
 var speed
 var projectiles
 var duration
-var projectile = preload("res://Scenes/WaterMissileProjectile.tscn")
+var projectile = preload("res://Scenes/HolyWaterProjectile.tscn")
 var toSpawn = 0
 var time = 0
 
@@ -26,8 +26,8 @@ func _process(delta):
 	time += delta
 	if (time > 0.1) && toSpawn > 0:
 		time = 0
-		var projectile_instance = projectile.instance().init(damage, speed)
-		projectile_instance.position = global_transform.origin+Vector2(rand_range (-20, 20), rand_range (-20, 20))
+		var projectile_instance = projectile.instance().init(damage, speed, duration, area)
+		projectile_instance.position = global_transform.origin
 		GameMaster.level.add_child(projectile_instance)
 		toSpawn -= 1
 
