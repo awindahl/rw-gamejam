@@ -39,7 +39,7 @@ drag_margin_bottom = 0.1
 
 [node name="Pickup" parent="YSort/PickupContainer" instance=ExtResource( 4 )]
 position = Vector2( -305, 121 )
-_value = 1
+_value = 3
 _type = "weapon"
 
 [node name="Pickup2" parent="YSort/PickupContainer" instance=ExtResource( 4 )]

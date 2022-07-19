@@ -208,7 +208,7 @@
         "desc": "Turns the ground around the player on fire.",
         "icon": "immolation_icon",
         "element": "rune_fire",
-        "scene": "PulseAttack",
+        "scene": "ImmolationAttack",
         "maxLevel": 6,
         "levels": {
             "1": {
