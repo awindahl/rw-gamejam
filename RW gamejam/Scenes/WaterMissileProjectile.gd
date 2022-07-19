@@ -15,7 +15,7 @@ func init(dmg, spd):
 func _ready():
 	var currEnemy
 	var dist = 99999
-	var enemies = GameMaster.get_enemy_objects()
+	var enemies = GameMaster.get_enemies_inside_viewport()
 	if enemies.size() < 1: 
 		dying = true
 		queue_free()

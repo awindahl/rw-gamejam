@@ -21,11 +21,10 @@ func init(dmg, a):
 
 func _ready():
 	$Sprite.set_texture (images[randi() % images.size()])
-	var enemies = GameMaster.get_enemy_objects()
+	var enemies = GameMaster.get_enemies_inside_viewport()
 	if enemies.size() < 1:
 		queue_free()
 	else:
-
 		point_0 = position
 		point_2 = enemies[randi() % enemies.size()].global_transform.origin
 		point_1 = point_0 + (point_2 - point_0)/2 + Vector2.UP *500.0

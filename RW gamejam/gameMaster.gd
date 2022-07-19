@@ -6,6 +6,7 @@ var level
 var camera
 export var levelScene = "TestBench"
 var time = 0
+var visible_enemies = []
 
 func _ready():
 	randomize()
@@ -67,6 +68,18 @@ func get_coordinates_on_viewport(rect, deg):
 	
 	return Vector2(edge_point.x-rect.x/2, edge_point.y-rect.y/2)
 
+func get_enemies_inside_viewport():
+	return visible_enemies
+
+func add_visible_enemy(object):
+	if !visible_enemies.has(object):
+		visible_enemies.append(object)
+	
+func remove_visible_enemy(object):
+	var id = visible_enemies.find(object)
+	if id != -1:
+		visible_enemies.remove(id)
+	
 func get_enemy_objects():
 	return level.get_node("YSort/EnemyContainer").get_children()
 	

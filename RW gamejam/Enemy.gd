@@ -51,6 +51,7 @@ func damage(ammount):
 		die()
 
 func die():
+	GameMaster.remove_visible_enemy(self)
 	call_deferred("die_deferred")
 	animPlayer.play("death")
 
@@ -67,3 +68,9 @@ func _on_Area2D_body_entered(body):
 			body.damage(10)
 			body.is_hit = true
 			body.hit_dir = body.position - position
+
+func _on_VisibilityNotifier2D_screen_entered():
+	GameMaster.add_visible_enemy(self)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	GameMaster.remove_visible_enemy(self)
