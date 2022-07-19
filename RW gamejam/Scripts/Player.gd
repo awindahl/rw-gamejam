@@ -119,7 +119,7 @@ func _process(_delta):
 func give_weapon(weapon): call_deferred("give_weapon_deferred", weapon)
 func give_weapon_deferred(weapon_id):
 	var hasWeapon = false
-	for weapon in weapons.get_children():
+	for weapon in current_weapon_array:
 		if (weapon.id == weapon_id && weapon.level < DataMaster.weapons[str(weapon_id)]["maxLevel"]):
 			print("leveling up weapon! found a weapon equipped that is not max level")
 			weapon.level_up();
@@ -129,27 +129,31 @@ func give_weapon_deferred(weapon_id):
 			print("found a max leveled weapon")
 			hasWeapon = true
 			break
-	if !hasWeapon && weapon_max_slots > weapons.get_child_count():
+	if !hasWeapon && weapon_max_slots > current_weapon_array.size():
 		print("found a new shiny weapon! and we have extra slots!")
 		weapons.add_child(load("res://Scenes/"+DataMaster.weapons[str(weapon_id)]["scene"]+".tscn").instance())
+	else:
+		pass
 	_weapon_update()
 
 func _weapon_update():
+	current_weapon_array = weapons.get_children()
 	weapon_label.text = "Current weapons: \n"
-	for weapon in weapons.get_children():
+	for weapon in current_weapon_array:
 		weapon_label.text += "\n"
 		weapon_label.text += DataMaster.weapons[weapon.id]["name"]
 
+
 func get_weapon_level(weapon_id):
-	for _weapon in weapons.get_children():
+	for _weapon in current_weapon_array:
 		if _weapon.id == weapon_id: 
 			return _weapon.level
 	return 0
 
 func get_player_weapons():
-	return weapons.get_children()
+	return current_weapon_array
 
-func get_item_level(item_id):
+func get_item_level(_item_id):
 	return 1
 
 func get_player_items():

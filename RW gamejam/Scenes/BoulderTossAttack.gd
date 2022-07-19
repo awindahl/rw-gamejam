@@ -26,7 +26,7 @@ func _process(delta):
 	time += delta
 	if (time > 0.1) && toSpawn > 0:
 		time = 0
-		var projectile_instance = projectile.instance().init(damage, speed, duration, area)
+		var projectile_instance = projectile.instance().init(damage, area)
 		projectile_instance.position = global_transform.origin
 		GameMaster.level.add_child(projectile_instance)
 		toSpawn -= 1

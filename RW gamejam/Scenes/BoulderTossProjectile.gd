@@ -7,20 +7,16 @@ var point_2
 var point_1
 var time = 0
 var damage
-var speed
-var duration = 0
-var _area = 0
-var lockedOn
-var area = preload("res://Scenes/HolyWaterArea.tscn")
+var size = 0
+var area = preload("res://Scenes/BoulderTossArea.tscn")
 var image1 = preload("res://Assets/rock1.png")
 var image2 = preload("res://Assets/rock2.png") 
 var images = [image1, image2]
+var spawned = false
 
-func init(dmg, spd, drn, a):
+func init(dmg, a):
 	damage = dmg
-	speed = spd
-	_area = a
-	duration = drn
+	size = a
 	return self
 
 func _ready():
@@ -29,6 +25,7 @@ func _ready():
 	if enemies.size() < 1:
 		queue_free()
 	else:
+
 		point_0 = position
 		point_2 = enemies[randi() % enemies.size()].global_transform.origin
 		point_1 = point_0 + (point_2 - point_0)/2 + Vector2.UP *500.0
@@ -40,12 +37,13 @@ func _process(delta):
 		var m1 = lerp(point_0, point_1, time)
 		var m2 = lerp(point_1, point_2, time)
 		position = lerp(m1, m2, time)
-	else:
+	elif !spawned:
+		var area_instance = area.instance().init(damage, size)
+		area_instance.position = global_transform.origin
+		GameMaster.level.add_child(area_instance)
+		spawned = true
 		$AnimationPlayer.play("die")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":
-		var area_instance = area.instance().init(damage, speed, duration, _area)
-		area_instance.position = global_transform.origin
-		GameMaster.level.add_child(area_instance)
 		queue_free()
