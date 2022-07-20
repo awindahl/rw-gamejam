@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var ground_particle_effect = preload("res://Scenes/ParticlePlayground.tscn")
+onready var ground_particle_effect
 onready var particle_timer = $ParticleTimer
 onready var area2d = $Area2D  
 
@@ -15,6 +15,7 @@ func init(dmg, area):
 	return self
 
 func _ready():
+	ground_particle_effect = DataMaster.get_scene("ParticlePlayground")
 	scale = Vector2(radius, radius)
 	var new_ground_particle = ground_particle_effect.instance()
 	new_ground_particle.get_node("GroundPound").visible = true

@@ -9,7 +9,7 @@ onready var UI = $CanvasLayer/UI
 onready var LevelUp = $LevelUpLayer/LevelUp  
 onready var XP_bar = $CanvasLayer/UI/XPbar
 onready var HP_bar = $HPbar
-onready var blood_particles = preload("res://Scenes/BloodParticles.tscn")
+onready var blood_particles
 onready var hit_timer = $HitTimer
 onready var invic_timer = $InvincibilityTimer
 onready var sprite = $Sprite
@@ -51,6 +51,7 @@ var facing = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	blood_particles = DataMaster.get_scene("/BloodParticles")
 	current_hp = max_hp
 	_update_ring()
 	_weapon_update()

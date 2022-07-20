@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var air_particle_effect = preload("res://Scenes/ParticlePlayground.tscn")
+onready var air_particle_effect
 onready var attack_timer = $AttackTimer
 onready var particle_timer = $ParticleTimer
 onready var attack_cooldown = $AttackCooldown
@@ -17,6 +17,7 @@ var current_air_particle_effect = null
 var hitbox_size = 100
 
 func _ready():
+	air_particle_effect = DataMaster.get_scene("ParticlePlayground")
 	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
 	hitbox_size = weaponData["area"]
 	attack_speed = weaponData["cooldown"]

@@ -8,11 +8,12 @@ var damage
 var speed
 var projectiles
 var duration
-var projectile = preload("res://Scenes/WaterMissileProjectile.tscn")
+var projectile
 var toSpawn = 0
 var time = 0
 
 func _ready():
+	projectile = DataMaster.get_scene("/WaterMissileProjectile")
 	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
 	area = weaponData["area"]
 	cooldown = weaponData["cooldown"]

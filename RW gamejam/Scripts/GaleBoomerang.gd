@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var projectile = preload("res://Scenes/GaleBoomerangProjectile.tscn")
+onready var projectile
 
 var id = "7"
 var level = 1
@@ -14,6 +14,7 @@ var number_of_projectiles = 2
 var spawn = false
 
 func _ready():
+	projectile = DataMaster.get_scene("/GaleBoomerangProjectile")
 	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
 	projectile_range = weaponData["area"]
 	attack_speed = weaponData["cooldown"]

@@ -10,7 +10,7 @@ var damage
 var speed
 var duration = 0
 var _area = 0
-var area = preload("res://Scenes/HolyWaterArea.tscn")
+var area
 
 func init(dmg, spd, drn, a):
 	damage = dmg
@@ -20,6 +20,7 @@ func init(dmg, spd, drn, a):
 	return self
 
 func _ready():
+	area = DataMaster.get_scene("/HolyWaterArea")
 	point_0 = position
 	point_2 = Vector2(cos(angle)*radius, sin(angle)*radius) + point_0
 	point_1 = point_0 + (point_2 - point_0)/2 + Vector2.UP *500.0

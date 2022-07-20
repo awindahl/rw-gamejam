@@ -8,10 +8,9 @@ var point_1
 var time = 0
 var damage
 var size = 0
-var area = preload("res://Scenes/BoulderTossArea.tscn")
-var image1 = preload("res://Assets/rock1.png")
-var image2 = preload("res://Assets/rock2.png") 
-var images = [image1, image2]
+var area
+var image1
+var image2
 var spawned = false
 
 func init(dmg, a):
@@ -20,7 +19,11 @@ func init(dmg, a):
 	return self
 
 func _ready():
-	$Sprite.set_texture (images[randi() % images.size()])
+	area = DataMaster.get_scene("BoulderTossArea")
+	image1 = DataMaster.get_asset("rock1")
+	image2 = DataMaster.get_asset("rock2")
+	var images = [image1, image2]
+	$Sprite.texture = images[randi() % images.size()]
 	var enemies = GameMaster.get_enemies_inside_viewport()
 	if enemies.size() < 1:
 		queue_free()

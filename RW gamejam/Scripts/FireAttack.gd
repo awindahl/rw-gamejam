@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var fire_particle_effect = preload("res://Scenes/ParticlePlayground.tscn")
+onready var fire_particle_effect
 onready var attack_timer = $AttackTimer
 onready var particle_timer = $ParticleTimer
 onready var attack_cooldown = $AttackCooldown
@@ -17,6 +17,7 @@ var duration
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	fire_particle_effect = DataMaster.get_scene("ParticlePlayground")
 	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
 	area = weaponData["area"]
 	attack_speed = weaponData["cooldown"]

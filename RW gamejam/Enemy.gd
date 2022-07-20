@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-onready var damageText = preload("res://Scenes/DamageText.tscn")
+onready var damageText
 onready var animPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 
 onready var player = get_parent().get_parent().get_node("Player")
 onready var coll = $Area2D/CollisionShape2D
-onready var pickup = preload("res://Scenes/Pickup.tscn")
+onready var pickup
 
 var _type = ""
 var _speed = 0
@@ -26,6 +26,8 @@ func init(spritesheet, type, health, speed, xptype, scaled):
 	return self
 
 func _ready():
+	damageText = DataMaster.get_scene("/DamageText")
+	pickup = DataMaster.get_scene("/Pickup")
 	var enemy_texture = load("res://images/" + _spriteSheet + ".png")
 	sprite.texture = enemy_texture
 	scale = Vector2(_scale, _scale)
