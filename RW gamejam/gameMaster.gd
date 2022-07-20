@@ -7,6 +7,7 @@ var camera
 export var levelScene = "TestBench"
 var time = 0
 var visible_enemies = []
+var looping_edge_limit = 100
 
 func _ready():
 	randomize()
@@ -26,6 +27,12 @@ func _process(delta):
 			childEnemy = enemy.instance().init("skele_sheet", "ground", 60, 20, 1, 2)
 		childEnemy.position = Vector2(camera.position.x + coords.x, camera.position.y + coords.y)
 		level.get_node("YSort/EnemyContainer").add_child(childEnemy)
+	
+	for enemy_obj in get_enemy_objects():
+		if enemy_obj.position.x < camera.position.x-viewport_size.x/2-looping_edge_limit: enemy_obj.position.x = camera.position.x+viewport_size.x/2+looping_edge_limit
+		if enemy_obj.position.x > camera.position.x+viewport_size.x/2+looping_edge_limit: enemy_obj.position.x = camera.position.x-viewport_size.x/2-looping_edge_limit
+		if enemy_obj.position.y < camera.position.y-viewport_size.y/2-looping_edge_limit: enemy_obj.position.y = camera.position.y+viewport_size.y/2+looping_edge_limit
+		if enemy_obj.position.y > camera.position.y+viewport_size.y/2+looping_edge_limit: enemy_obj.position.y = camera.position.y-viewport_size.y/2-looping_edge_limit
 
 func get_coordinates_on_viewport(rect, deg):
 	var twopi = PI*2;
