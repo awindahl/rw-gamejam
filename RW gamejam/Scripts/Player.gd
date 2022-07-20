@@ -76,13 +76,13 @@ func _process(_delta):
 	
 	if velocity.x < 0:
 		facing.x = -1
-		weapons.scale.x = -1
+		#weapons.scale.x = -1
 		if sprite.flip_h != true:
 			sprite.flip_h = true
 		
 	if velocity.x > 0:
 		facing.x = 1
-		weapons.scale.x = 1
+		#weapons.scale.x = 1
 		if sprite.flip_h == true:
 			sprite.flip_h = false
 	

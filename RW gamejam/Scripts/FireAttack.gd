@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var fire_particle_effect = preload("res://Scenes/ParticlePlayground.tscn")
+onready var fire_particle_effect = $Fire
 onready var attack_timer = $AttackTimer
 onready var particle_timer = $ParticleTimer
 onready var attack_cooldown = $AttackCooldown
@@ -25,16 +25,26 @@ func _ready():
 	projectiles = weaponData["projectiles"]
 	duration = weaponData["duration"]
 	attack_timer.wait_time = attack_speed
-	attack_timer.start(attack_speed)
-	var new_fire = fire_particle_effect.instance()
-	new_fire.get_node("Fire").visible = true
-	new_fire.get_node("Fire").emitting = true
-	add_child(new_fire)
+	_update()
 
+
+func _process(delta):
+	if get_parent().get_parent().facing.x < 0:
+		scale.x = -1
+		fire_particle_effect.angle = 180
+	else:
+		scale.x = 1
+		fire_particle_effect.angle = 0
+
+func _update():
+	scale.x = area
+	scale.y = area
+	
 
 func _on_AttackTimer_timeout():
 	hitbox.disabled = false
 	attack_cooldown.start()
+	attack_timer.wait_time = attack_speed
 
 
 func _on_AttackCooldown_timeout():
@@ -55,3 +65,4 @@ func level_up():
 	projectiles = weaponData["projectiles"]
 	duration = weaponData["duration"]
 	attack_timer.wait_time = attack_speed
+	_update()

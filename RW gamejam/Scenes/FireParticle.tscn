@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/fire_particle.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 1.65333, 0, 0, Vector2( 0.387255, 1 ), 0.639066, 0.639066, 0, 0 ]
+
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0.690608, 0.977901 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.47451 )
+
+[node name="Fire" type="CPUParticles2D"]
+position = Vector2( 0, -16 )
+z_index = -1
+amount = 64
+lifetime = 1.24
+speed_scale = 2.19
+lifetime_randomness = 0.28
+local_coords = false
+texture = ExtResource( 1 )
+spread = 13.69
+gravity = Vector2( 0, 0 )
+initial_velocity = 179.85
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 13 )
