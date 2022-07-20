@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/rune_air.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 30 )
+extents = Vector2( 10, 20 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.0
@@ -74,10 +74,10 @@ collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 2
 
@@ -101,6 +101,7 @@ initial_velocity = 80.0
 hue_variation = -0.09
 
 [node name="Weapons" type="Node2D" parent="."]
+position = Vector2( 0, -16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

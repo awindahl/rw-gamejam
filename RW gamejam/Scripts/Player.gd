@@ -40,7 +40,7 @@ var weapon_max_slots = 4
 var item_max_slots = 4
 
 #player movement
-var move_speed = 250
+var move_speed = 150
 var acceleration = 0.5
 var direction = Vector2()
 var velocity = Vector2()
@@ -77,13 +77,13 @@ func _process(_delta):
 	
 	if velocity.x < 0:
 		facing.x = -1
-		weapons.scale.x = -1
+		#weapons.scale.x = -1
 		if sprite.flip_h != true:
 			sprite.flip_h = true
 		
 	if velocity.x > 0:
 		facing.x = 1
-		weapons.scale.x = 1
+		#weapons.scale.x = 1
 		if sprite.flip_h == true:
 			sprite.flip_h = false
 	

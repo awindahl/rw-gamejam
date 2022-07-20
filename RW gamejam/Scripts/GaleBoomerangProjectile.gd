@@ -16,6 +16,7 @@ func _ready():
 	set_as_toplevel(true)
 	global_position = get_parent().global_position
 	death_timer.start(time_to_live)
+	player_dir = get_parent().get_parent().get_parent().facing.x
 	if player_dir < 0:
 		move_speed *= -1
 
