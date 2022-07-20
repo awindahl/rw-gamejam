@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/fire_01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/flame_03.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/magic_01.png" type="Texture" id=5]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/circle_02.png" type="Texture" id=6]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/trace_04.png" type="Texture" id=7]
-[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/flare_01.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/AirCutterParticle.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0 ), 0.0, 1.65333, 0, 0, Vector2( 0.829545, 0.919318 ), 0.64, 0.64, 0, 0, Vector2( 1, 0 ), -4.44445, 0.0, 0, 0 ]
@@ -41,10 +41,6 @@ colors = PoolColorArray( 1, 0, 0, 1, 0.51123, 0.0659008, 0.0659008, 0 )
 [sub_resource type="Gradient" id=12]
 offsets = PoolRealArray( 0.369295, 0.995851 )
 colors = PoolColorArray( 0.521569, 0.858824, 1, 0.0941176, 1, 1, 1, 0.14902 )
-
-[sub_resource type="Gradient" id=13]
-offsets = PoolRealArray( 0, 0.20332 )
-colors = PoolColorArray( 1, 1, 1, 0.619608, 1, 1, 1, 0 )
 
 [node name="ParticlePlayground" type="Node2D"]
 
@@ -165,19 +161,5 @@ orbit_velocity_random = 0.07
 scale_amount_random = 1.0
 color_ramp = SubResource( 12 )
 
-[node name="AirCutter" type="CPUParticles2D" parent="."]
+[node name="AirCutter" parent="." instance=ExtResource( 8 )]
 visible = false
-amount = 100
-lifetime = 1.26
-speed_scale = 1.85
-explosiveness = 0.88
-local_coords = false
-draw_order = 1
-texture = ExtResource( 8 )
-spread = 38.69
-gravity = Vector2( 0, 0 )
-initial_velocity = 572.35
-angle = 9.1
-scale_amount = 0.5
-color = Color( 0.717647, 0.92549, 0.909804, 0.329412 )
-color_ramp = SubResource( 13 )

@@ -1,20 +1,20 @@
 extends Node2D
 
-onready var air_particle_effect = preload("res://Scenes/ParticlePlayground.tscn")
+onready var projectile = preload("res://Scenes/AirCutterProjectile.tscn")
+
 onready var attack_timer = $AttackTimer
-onready var particle_timer = $ParticleTimer
-onready var attack_cooldown = $AttackCooldown
-onready var hitbox = $Area2D/CollisionShape2D
 
 var id = "6"
 var level = 1
 var speed
 var projectiles
 var duration
-var damage = 10
-var attack_speed = 0.3
+var damage
+var attack_speed
 var current_air_particle_effect = null
-var hitbox_size = 100
+var hitbox_size
+var number_of_projectiles
+var player_dir
 
 func _ready():
 	var weaponData = DataMaster.weapons[id]["levels"][str(level)]
@@ -22,36 +22,22 @@ func _ready():
 	attack_speed = weaponData["cooldown"]
 	damage = weaponData["damage"]
 	speed = weaponData["projectile_speed"]
-	projectiles = weaponData["projectiles"]
+	number_of_projectiles = weaponData["projectiles"]
 	duration = weaponData["duration"]
-	attack_timer.wait_time = attack_speed
 	attack_timer.start(attack_speed)
-	hitbox.shape.radius = 100
-
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("Enemies"):
-		body.damage(damage)
 
 
 func _on_AttackTimer_timeout():
-	hitbox.disabled = false
-	
-	var new_air_particle = air_particle_effect.instance()
-	new_air_particle.get_node("AirCutter").visible = true
-	new_air_particle.get_node("AirCutter").emitting = true
-	add_child(new_air_particle)
-	current_air_particle_effect = new_air_particle
-	particle_timer.start()
-	attack_cooldown.start()
+	for i in number_of_projectiles:
+		var new_projectile = projectile.instance()
+		new_projectile.damage = damage
+		new_projectile.time_to_live = duration
+		new_projectile.hitbox = hitbox_size
+		new_projectile.set_as_toplevel(true)
+		new_projectile.global_position = global_position
+		add_child(new_projectile)
+		yield(get_tree().create_timer(0.5), "timeout")
 
-
-func _on_AttackCooldown_timeout():
-	hitbox.disabled = true
-
-
-func _on_ParticleTimer_timeout():
-	current_air_particle_effect.get_node("AirCutter").emitting = false
-	#current_air_particle_effect.queue_free()
 
 func level_up():
 	level += 1

@@ -428,9 +428,9 @@
                 "area": 1,
                 "cooldown": 2,
                 "damage": 10,
-                "projectiles": 1,
+                "projectiles": 2,
                 "projectile_speed": 15,
-                "duration": 1
+                "duration": 0.15
             },
             "2": {
                 "desc": "Increases projectile speed.",
@@ -497,7 +497,7 @@
                 "cooldown": 2,
                 "damage": 10,
                 "projectiles": 1,
-                "projectile_speed": 15,
+                "projectile_speed": 5,
                 "duration": 1
             },
             "2": {
@@ -506,7 +506,7 @@
                 "cooldown": 2,
                 "damage": 10,
                 "projectiles": 1,
-                "projectile_speed": 25,
+                "projectile_speed": 7,
                 "duration": 1
             },
             "3": {
@@ -515,7 +515,7 @@
                 "cooldown": 2,
                 "damage": 10,
                 "projectiles": 2,
-                "projectile_speed": 25,
+                "projectile_speed": 7,
                 "duration": 1
             },
             "4": {
@@ -524,7 +524,7 @@
                 "cooldown": 1.25,
                 "damage": 10,
                 "projectiles": 2,
-                "projectile_speed": 25,
+                "projectile_speed": 10,
                 "duration": 1
             },
             "5": {
@@ -533,7 +533,7 @@
                 "cooldown": 1.25,
                 "damage": 15,
                 "projectiles": 2,
-                "projectile_speed": 25,
+                "projectile_speed": 10,
                 "duration": 1
             },
             "6": {
@@ -542,7 +542,7 @@
                 "cooldown": 1.25,
                 "damage": 15,
                 "projectiles": 3,
-                "projectile_speed": 25,
+                "projectile_speed": 10,
                 "duration": 1
             }
         },
