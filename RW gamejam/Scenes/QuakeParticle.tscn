@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/ground_particle.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0.161765, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.259804, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.426471, 1 ), 0.0, -3.5486, 1, 0, Vector2( 0.529412, 0 ), -9.71429, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0.61326, 0.98895 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="QuakeParticle" type="CPUParticles2D"]
+z_index = -1
+emitting = false
+amount = 3
+lifetime = 0.56
+one_shot = true
+speed_scale = 1.41
+explosiveness = 0.89
+local_coords = false
+texture = ExtResource( 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 15.0
+angular_velocity_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale_amount = 3.79
+scale_amount_curve = SubResource( 13 )
+color_ramp = SubResource( 14 )

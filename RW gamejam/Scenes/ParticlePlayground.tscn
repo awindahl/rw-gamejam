@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/FireParticle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/flame_03.png" type="Texture" id=2]
-[ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/spark_02.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/QuakeParticle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/trace_07.png" type="Texture" id=4]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/magic_01.png" type="Texture" id=5]
 [ext_resource path="res://Assets/particlePack_1.1/PNG (Transparent)/circle_02.png" type="Texture" id=6]
@@ -20,13 +20,6 @@ colors = PoolColorArray( 0.387573, 0.541353, 0.78125, 1, 0.254902, 1, 0.913725, 
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0.898619, 0.928711, 0.431705, 0.81074 )
 
-[sub_resource type="Curve" id=9]
-_data = [ Vector2( 0.412879, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.67803, 0.357955 ), -0.648648, -0.648648, 0, 0, Vector2( 1, 0 ), -2.89616, 0.0, 0, 0 ]
-
-[sub_resource type="Gradient" id=8]
-offsets = PoolRealArray( 0.327801, 0.995851 )
-colors = PoolColorArray( 0.415527, 0.382094, 0.355471, 0.360784, 0.231373, 0.152941, 0.0941176, 0 )
-
 [sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.630705, 0.987552 )
 colors = PoolColorArray( 1, 0, 0, 1, 0.51123, 0.0659008, 0.0659008, 0 )
@@ -38,6 +31,7 @@ colors = PoolColorArray( 0.521569, 0.858824, 1, 0.0941176, 1, 1, 1, 0.14902 )
 [node name="ParticlePlayground" type="Node2D"]
 
 [node name="Fire" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="Water" type="CPUParticles2D" parent="."]
 visible = false
@@ -73,20 +67,8 @@ scale_amount = 0.46
 color = Color( 1, 1, 1, 0.0784314 )
 color_ramp = SubResource( 11 )
 
-[node name="GroundPound" type="CPUParticles2D" parent="."]
+[node name="GroundPound" parent="." instance=ExtResource( 3 )]
 visible = false
-z_index = -1
-amount = 24
-speed_scale = 2.34
-explosiveness = 1.0
-local_coords = false
-texture = ExtResource( 3 )
-spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 250.0
-scale_amount = 0.5
-scale_amount_curve = SubResource( 9 )
-color_ramp = SubResource( 8 )
 
 [node name="Arcane" type="CPUParticles2D" parent="."]
 visible = false

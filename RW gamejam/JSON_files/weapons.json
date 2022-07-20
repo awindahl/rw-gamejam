@@ -8,8 +8,8 @@
         "maxLevel": 6,
         "levels": {
             "1": {
-                "desc": "Attacks the closest enemy with water missiles.",
-                "area": 1,
+                "desc": "Creates a massive earthquake beneath your feet.",
+                "area": 100,
                 "cooldown": 2,
                 "damage": 10,
                 "projectiles": 1,
@@ -17,46 +17,46 @@
                 "duration": 1
             },
             "2": {
-                "desc": "Increases projectile speed.",
-                "area": 1,
+                "desc": "Higher damage quakes.",
+                "area": 150,
                 "cooldown": 2,
-                "damage": 10,
+                "damage": 15,
                 "projectiles": 1,
                 "projectile_speed": 25,
                 "duration": 1
             },
             "3": {
-                "desc": "Adds an extra projectile.",
-                "area": 1,
-                "cooldown": 2,
-                "damage": 10,
+                "desc": "Larger area, lower cooldown.",
+                "area": 150,
+                "cooldown": 1.6,
+                "damage": 15,
                 "projectiles": 2,
                 "projectile_speed": 25,
                 "duration": 1
             },
             "4": {
                 "desc": "Lower cooldown.",
-                "area": 1,
+                "area": 150,
                 "cooldown": 1.25,
-                "damage": 10,
+                "damage": 15,
                 "projectiles": 2,
                 "projectile_speed": 25,
                 "duration": 1
             },
             "5": {
-                "desc": "Increases projectile damage.",
-                "area": 1,
+                "desc": "Increases damage.",
+                "area": 150,
                 "cooldown": 1.25,
-                "damage": 15,
+                "damage": 20,
                 "projectiles": 2,
                 "projectile_speed": 25,
                 "duration": 1
             },
             "6": {
-                "desc": "Adds an extra projectile.",
-                "area": 1,
-                "cooldown": 1.25,
-                "damage": 15,
+                "desc": "Biggest area, loweste cooldown.",
+                "area": 200,
+                "cooldown": 1,
+                "damage": 20,
                 "projectiles": 3,
                 "projectile_speed": 25,
                 "duration": 1
